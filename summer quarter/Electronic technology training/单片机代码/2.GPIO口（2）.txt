@@ -1,0 +1,23 @@
+#include <msp430.h>
+
+int main(void)
+{
+  WDTCTL = WDTPW + WDTHOLD;                 // Stop watchdog timer
+  P1DIR |= BIT0;                            // Set P1.0 to output direction
+  P1DIR &=~BIT3;
+  P1OUT|=BIT3;
+  P1REN|=BIT3;
+
+
+  while (1)
+  {
+    if(BIT3&P1IN){
+        P1OUT &=~BIT0;
+    }
+    else{
+        P1OUT |=BIT0;
+    }
+
+
+  }
+}

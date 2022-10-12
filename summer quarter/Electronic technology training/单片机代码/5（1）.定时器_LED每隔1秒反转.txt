@@ -1,0 +1,27 @@
+#include <msp430.h>
+
+int count=0;
+int main(void)
+{
+  WDTCTL = WDTPW + WDTHOLD;                 // Stop WDT
+  P1DIR |= 0x01;                            // P1.0 output
+  TA0CCTL0=CCIE;                          //CCR0中断使能
+  TA0CCR0=50000;                           //50ms时间间隔
+  TACTL = TASSEL_2 + MC_1 + TACLR;
+
+  __bis_SR_register(LPM0_bits + GIE);
+}
+
+
+
+#pragma vector=TIMER0_A0_VECTOR
+__interrupt void TIMER0_A0_ISR(void){
+    if(count==20){
+        P1OUT^=BIT0;
+        count=0;
+    }
+    else count++;
+ }
+
+
+

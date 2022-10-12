@@ -1,0 +1,52 @@
+#include <msp430.h>
+// *************************************************************
+// 延时函数，延时n*ms
+// *************************************************************
+void delay_nms(unsigned int n)
+  {
+    unsigned int j;
+    for (j=0;j<n;j++)
+    {
+      //delay_1ms();
+      _delay_cycles(400);
+    }
+  }
+
+// *************************************************************
+// 主程序
+// *************************************************************
+void main(void)
+{
+  unsigned const PWMPeriod = 1500; //设置PWMPeriod参数
+  volatile unsigned int i;        //变量
+  WDTCTL = WDTPW + WDTHOLD;   // 关闭看门狗
+  BCSCTL1= CALBC1_1MHZ;        //1M内部时钟，其他也可以
+  DCOCTL = CALDCO_1MHZ;
+  P1DIR |=BIT6;              // 设置 P1.6为输出
+  P1SEL |=BIT6;              // 设置 P1.6为TA0.1输出
+  TACCR0 = PWMPeriod;           // 设置PWM 周期
+  TACCTL1 = OUTMOD_7;           // 设置PWM 输出模式为：7 - PWM复位/置位模式，
+                              // 即输出电平在TAR的值等于CCR1时复位为0，当TAR的值等于CCR0时置位为1，改变CCR1，从而产生PWM。其实模式2也可以
+   TACTL =  TASSEL_2 +MC_1;    // 设置TIMERA的时钟源为SMCLK, 计数模式为up,到CCR0再自动从0开始计数
+  while(1)
+  {
+   CCR1=0;//确保开始是暗的
+    //渐亮过程：不断设置CCR1的值，使翻转的时间变长，改变PWM的占空比
+
+    for(i=0;i<PWMPeriod;i++)     {
+      CCR1=i;
+      delay_nms(4-(i/500));  //占空比变化的延时，调整延迟时间可改变呼吸灯变暗的速度
+                          //在暗的时候延长delay时间，可增强效果
+     }
+    //渐暗过程：不断设置CCR1的值，使翻转的时间变短，改变PWM的占空比
+    for(i=PWMPeriod;i>0;i-=1)
+    {
+      CCR1=i;
+      delay_nms(4-(i/500));           //占空比变化的延时，调整延迟时间可改变呼吸灯变暗的速度
+                                    //在暗的时候延长delay时间，可增强效果
+    }
+     CCR1=0;  //确保灯暗
+     delay_nms(600); //暗0.6S增强效果
+  }
+}
+
