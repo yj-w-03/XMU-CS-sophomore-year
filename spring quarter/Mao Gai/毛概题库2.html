@@ -1,0 +1,2563 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>all(3).html</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-require-zoom-fix foreignobject { font-size: var(--mermaid-font-zoom); }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+ :root {--mermaid-font-zoom:1.25em ;} 
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1><center>毛概测试题库</center></h1><h3 align="right">感谢各位的样本，共收集 <span>6472</span>道题目，去重后有效题数为  <span>394</span>，大概率不会再增加</h3>
+ <style>
+            span {
+                color: red;
+            }
+</style>
+<h3 align="right">Copyright © glm233 All Rights Reserved  </h3>
+<h3 align="right">2020.5.16  </h3><h3>1. 经过长期努力，（），这是我国发展新的历史方位。</h3><div>A： 中国特色社会主义进入新阶段</div><p></div><div><span>B： 中国特色社会主义进入新征程</span>
+</div><div><span>C： 中国特色社会主义进入新时代</span>
+</div><div><span>D： 中国特色社会主义进入新局面</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            中国特色社会主义进入新时代</span></p><p></div><hr/><h3><span>2. 我国社会主要矛盾的变化，没有改变我们对我国社会主义所处历史阶段的判断，我国仍处于并将长期处于（）</span>&#12290;</h3><div><span>A： 不发达阶段</span>
+</div><div><span>B： 现代化阶段</span>
+</div><div><span>C： 小康阶段</span>
+</div><div><span>D： 社会主义初级阶段</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            社会主义初级阶段</span></p><p></div><hr/><h3><span>3. 习近平新时代中国特色社会主义思想是党和人民实践经验和集体智慧的结晶，其主要创立者是（）</span>&#12290;</h3><div><span>A： 习近平</span>
+</div><div><span>B： 李克强</span>
+</div><div><span>C： 王岐山</span>
+</div><div><span>D： 王沪宁</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            习近平</span></p><p></div><hr/><h3><span>4. 改革开放以来我们党全部理论和实践的鲜明主题是（）</span>&#12290;</h3><div><span>A： 实现社会主义现代化</span>
+</div><div><span>B： 坚持和发展中国特色社会主义</span>
+</div><div><span>C： 解放和发展生产力</span>
+</div><div><span>D： 实现共同富裕</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            坚持和发展中国特色社会主义</span></p><p></div><hr/><h3><span>5. 坚持和发展中国特色社会主义的总任务是（）</span>&#12290;</h3><div><span>A： 实现共同富裕</span>
+</div><div><span>B： 实现社会和谐</span>
+</div><div><span>C： 实现社会主义现代化和中华民族伟大复兴</span>
+</div><div><span>D： 实现可持续发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            实现社会主义现代化和中华民族伟大复兴</span></p><p></div><hr/><h3><span>6. 中国特色社会主义事业总体布局是（）</span>&#12290;</h3><div><span>A： “二位一体”</span>
+</div><div><span>B： “三位一体”</span>
+</div><div><span>C： “四位一体”</span>
+</div><div><span>D： “五位一体”</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            “五位一体”</span></p><p></div><hr/><h3><span>7. 中国特色社会主义最本质的特征和中国特色社会主义制度的最大优势是（）</span>&#12290;</h3><div><span>A： 中国共产党领导</span>
+</div><div><span>B： 共同富裕</span>
+</div><div><span>C： 解放和发展生产力</span>
+</div><div><span>D： 社会和谐</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            中国共产党领导</span></p><p></div><hr/><h3><span>8. 习近平新时代中国特色社会主义思想不但明确了新时代坚持和发展什么样的中国特色社会主义，也回答了新时代怎样坚持和发展中国特色社会主义，党的十九大概括为</span>&#8220;<span>十四个坚持</span>&#8221;<span>，即（）</span>&#12290;</h3><div><span>A： 新时代中国特色社会主义基本纲领</span>
+</div><div><span>B： 新时代中国特色社会主义基本方略</span>
+</div><div><span>C： 新时代中国特色社会主义基本经验</span>
+</div><div><span>D： 新时代中国特色社会主义基本路线</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            新时代中国特色社会主义基本方略</span></p><p></div><hr/><h3><span>9. 习近平总书记指出，（）是一个国家</span>&#12289;<span>一个民族发展中更基本</span>&#12289;<span>更深沉</span>&#12289;<span>更持久的力量</span>&#12290;</h3><div><span>A： 道路自信</span>
+</div><div><span>B： 制度自信</span>
+</div><div><span>C： 文化自信</span>
+</div><div><span>D： 理论自信</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            文化自信</span></p><p></div><hr/><h3><span>10. （）是历史的创造者，是决定党和国家前途命运的根本力量</span>&#12290;</h3><div><span>A： 知识分子</span>
+</div><div><span>B： 工人阶级</span>
+</div><div><span>C： 中国共产党</span>
+</div><div><span>D： 人民</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人民</span></p><p></div><hr/><h3><span>11. 坚持全面依法治国，必须坚定不移走中国特色社会主义法治道路，完善以（）为核心的中国特色社会主义法律体系</span>&#12290;</h3><div><span>A： 宪法</span>
+</div><div><span>B： 法律</span>
+</div><div><span>C： 人民</span>
+</div><div><span>D： 中国共产党</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            宪法</span></p><p></div><hr/><h3><span>12. 党的十九大通过的党章修正案，把（）确立为党的指导思想，十三届全国人大一次会议把这一思想载入宪法</span>&#12290;</h3><div><span>A： 习近平治国理政思想</span>
+</div><div><span>B： 习近平新时代中国特色社会主义思想</span>
+</div><div><span>C： “四个全面”战略布局</span>
+</div><div><span>D： 构建人类命运共同体</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            习近平新时代中国特色社会主义思想</span></p><p></div><hr/><h3><span>13. 党的十九大报告指出，（）是发展的根本目的，必须多谋民生之利</span>&#12289;<span>多解民生之忧，在发展中补齐民生短板</span>&#12289;<span>促进社会公平正义</span>&#12290;</h3><div><span>A： 实现共同富裕</span>
+</div><div><span>B： 实现人民安居乐业</span>
+</div><div><span>C： 增进民生福祉</span>
+</div><div><span>D： 实现社会和谐</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            增进民生福祉</span></p><p></div><hr/><h3><span>14. 习近平新时代中国特色社会主义思想是在（ ）提出的</span>&#12290;</h3><div><span>A： 十八大</span>
+</div><div><span>B： 十八届三中全会</span>
+</div><div><span>C： 十九大</span>
+</div><div><span>D： 十三届全国人大一次会议</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            十九大</span></p><p></div><hr/><h3><span>15. 习近平新时代中国特色社会主义思想的核心要义是（ ）</span>&#12290;</h3><div><span>A： 坚持和发展中国特色社会主义</span>
+</div><div><span>B： 四个自信</span>
+</div><div><span>C： 8个明确</span>
+</div><div><span>D： 14个坚持</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            坚持和发展中国特色社会主义</span></p><p></div><hr/><h3><span>16. 我们党区别于其他政党的显著标志是（  ）</span>&#12290;</h3><div><span>A： 坚定的信仰信念</span>
+</div><div><span>B： 人民立场</span>
+</div><div><span>C： 高度自觉自信</span>
+</div><div><span>D： 无畏担当精神</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人民立场</span></p><p></div><hr/><h3><span>17. 新时代之</span>&#8220;<span>新</span>&#8221;<span>，在于我们迈向新的奋斗目标，中华民族迎来了从（  ）的伟大飞跃</span></h3><div><span>A： 站起来、富起来到强起来</span>
+</div><div><span>B： 富起来到强起来</span>
+</div><div><span>C： 站起来到富起来</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            站起来、富起来到强起来</span></p><p></div><hr/><h3><span>18. 习近平新时代中国特色社会主义思想从理论和实践结合上系统回答了（  ）的时代课题</span></h3><div><span>A： 什么是社会主义、怎样建设社会主义</span>
+</div><div><span>B： 新时代坚持和发展什么样的中国特色社会主义、怎样坚持和发展中国特色社会主义的时代课题</span>
+</div><div><span>C： 建设什么样的党、怎样建设党</span>
+</div><div><span>D： 实现什么样的发展、怎样实现发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            新时代坚持和发展什么样的中国特色社会主义、怎样坚持和发展中国特色社会主义的时代课题</span></p><p></div><hr/><h3><span>19. 对（ ）的科学判断，是制定党的路线方针政策的基本依据</span>&#12290;</h3><div><span>A： 社会主要矛盾</span>
+</div><div><span>B： 国情</span>
+</div><div><span>C： 世界形势</span>
+</div><div><span>D： 社会发展阶段</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            社会主要矛盾</span></p><p></div><hr/><h3><span>20. 党的十九大报告指出，当前我国社会主要矛盾已经转化为（）</span>&#12290;</h3><div><span>A： 人民日益增长的物质文化需要同落后的社会生产之间的矛盾</span>
+</div><div><span>B： 人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾</span>
+</div><div><span>C： 人民对于建立先进的工业国的要求同落后的农业国的现实之间的矛盾</span>
+</div><div><span>D： 人民对于经济文化迅速发展的需要同当前经济文化不能满足人民需要的状况之间的矛盾</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾</span></p><p></div><hr/><h3><span>21. （ ）___提出了创新</span>&#12289;<span>协调</span>&#12289;<span>绿色</span>&#12289;<span>开放</span>&#12289;<span>共享的新发展理念</span>&#12290;</h3><div><span>A： 党的十八大</span>
+</div><div><span>B： 党的十八届四中全会</span>
+</div><div><span>C： 党的十八届五中全会</span>
+</div><div><span>D： 党的十九大</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            党的十八届五中全会</span></p><p></div><hr/><h3><span>22. （ ）</span><strong><em><span>是引领发展的第一动力，</span></em></strong><span>是持续健康发展的内在要求，</span><strong><em><span>是永续发展的必要条件，</span></em></strong><span>是国家繁荣发展的必由之路，___是中国特色社会主义的本质要求</span>&#12290;</h3><div><span>A： 创新、协调、绿色、开放、共享</span>
+</div><div><span>B： 创新、绿色、协调、开放、共享</span>
+</div><div><span>C： 创新、绿色、开放、协调、共享</span>
+</div><div><span>D： 创新、协调、开放、绿色、共享</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            创新、协调、绿色、开放、共享</span></p><p></div><hr/><h3><span>23. （ ）创新发展注重解决___问题</span>&#12290;</h3><div><span>A： 发展方向</span>
+</div><div><span>B： 发展动力</span>
+</div><div><span>C： 发展理念</span>
+</div><div><span>D： 发展规划</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            发展动力</span></p><p></div><hr/><h3><span>24. （ ）协调发展注重解决___问题</span>&#12290;</h3><div><span>A： 发展不协调</span>
+</div><div><span>B： 发展不全面</span>
+</div><div><span>C： 发展不充分</span>
+</div><div><span>D： 发展不平衡</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            发展不平衡</span></p><p></div><hr/><h3><span>25. （ ）___发展注重解决发展内外联动问题</span>&#12290;</h3><div><span>A： 创新</span>
+</div><div><span>B： 协调</span>
+</div><div><span>C： 绿色</span>
+</div><div><span>D： 开放</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            开放</span></p><p></div><hr/><h3><span>26. （ ）深化供给侧结构性改革要求</span>&#8220;<span>三去一降一补</span>&#8221;<span>，其中，</span>&#8220;<span>一补</span>&#8221;<span>是指：___</span></h3><div><span>A： 补短板</span>
+</div><div><span>B： 补生态</span>
+</div><div><span>C： 补收益</span>
+</div><div><span>D： 补机制</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            补短板</span></p><p></div><hr/><h3><span>27. ( )高素质的___</span>&#12289;<span>工匠和劳模是推动供给侧结构性改革</span>&#12289;<span>振兴实体经济发展的重要力量</span>&#12290;</h3><div><span>A： 科学家</span>
+</div><div><span>B： 企业家</span>
+</div><div><span>C： 政府官员</span>
+</div><div><span>D： 企业员工</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            企业家</span></p><p></div><hr/><h3><span>28. （ ）只有推进供给侧结构性改革，提高供给体系质量，适应新需求变化，才能在更高水平上实现供求关系新的动态均衡，推动高___发展</span>&#12290;</h3><div><span>A： 速度</span>
+</div><div><span>B： 效率</span>
+</div><div><span>C： 质量</span>
+</div><div><span>D： 水平</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            质量</span></p><p></div><hr/><h3><span>29. （ ）伴随中国特色社会主义进入新时代,我国经济已由高速增长阶段创业易转向高质量发展阶段,正处在转变发展方式</span>&#12289;<span>优化经济结构</span>&#12289;<span>转换增长动力的___</span>&#12290;</h3><div><span>A： 关键期</span>
+</div><div><span>B： 决胜期</span>
+</div><div><span>C： 瓶颈期</span>
+</div><div><span>D： 攻关期</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            攻关期</span></p><p></div><hr/><h3><span>30. （ ）推动高质量发展是当前和今后一个时期确定发展思路</span>&#12289;<span>制定经济政策</span>&#12289;<span>实施宏观调控的___,必须加快形成推动高质量发展的指标体系</span>&#12289;<span>政策体系</span>&#12289;<span>标准体系</span>&#12289;<span>统计体系</span>&#12289;<span>绩效评价</span>&#12289;<span>政绩考核,创建和完善制度环境,推动我国经济在实现高质量发展上不断取得新进展</span>&#12290;</h3><div><span>A： 根本要求</span>
+</div><div><span>B： 基本要求</span>
+</div><div><span>C： 内在要求</span>
+</div><div><span>D： 必然要求</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            根本要求</span></p><p></div><hr/><h3><span>31. ( )建设现代化经济体系,必须坚持质量第一</span>&#12289;<span>效益优先,推动经济发展质量变革</span>&#12289;<span>效率变革</span>&#12289;<span>动力变革,提高全要素生产率</span>&#12290;<span>要建设创新引领</span>&#12289;<span>协同发展的产业体系,实现实体经济</span>&#12289;<span>科技创新</span>&#12289;<span>现代金融</span>&#12289;<span>人力资源___发展,使科技创新在实体经济发展中的贡献份额不断提高,现代金融服务实体经济的能力不断增强,人力资源支撑实体经济发展的作用不断优化</span>&#12290;</h3><div><span>A： 协调</span>
+</div><div><span>B： 协同</span>
+</div><div><span>C： 共同</span>
+</div><div><span>D： 共步</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            协同</span></p><p></div><hr/><h3><span>32. （ ）___是一国经济的立身之本，是财富创造的根本源泉，是国家强盛的重要支柱，是现代化经济体系的坚实基础</span>&#12290;</h3><div><span>A： 实体经济</span>
+</div><div><span>B： 国民经济</span>
+</div><div><span>C： 虚拟经济</span>
+</div><div><span>D： 国有经济</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            实体经济</span></p><p></div><hr/><h3><span>33. （）加快实施创新驱动发展战略</span>&#12290;<span>深入实施科教兴国战略</span>&#12289;<span>人才强国战略</span>&#12289;<span>创新驱动发展战略，努力实现到___年跻身创新型国家前列的目标</span>&#12290;</h3><div><span>A： 2025</span>
+</div><div><span>B： 2030</span>
+</div><div><span>C： 2035</span>
+</div><div><span>D： 2050</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            2035</span></p><p></div><hr/><h3><span>34. （ ）建设现代化经济体系要着力构建___的经济体制</span>&#12290;</h3><div><span>A： 市场机制有效、微观主体有活力、宏观调控有度</span>
+</div><div><span>B： 市场经济有效、经济主体有活力、宏观调控有度</span>
+</div><div><span>C： 市场经济有效、微观主体有活力、宏观政策有度</span>
+</div><div><span>D： 市场经济有效、微观主体有活力、宏观调控有度</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            市场经济有效、微观主体有活力、宏观调控有度</span></p><p></div><hr/><h3><span>35. （ ）着力发展开放型经济</span>&#12290;<span>提高现代化经济体系的国际竞争力，更好利用全球资源和市场，继续积极推进</span>&#8220;<span>___</span>&#8221;<span>框架下的国际交流合作</span>&#12290;</h3><div><span>A： 一带一路</span>
+</div><div><span>B： 金砖机制</span>
+</div><div><span>C： 自贸区</span>
+</div><div><span>D： 区域合作</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            一带一路</span></p><p></div><hr/><h3><span>36. （）坚持开放发展,就要___</span></h3><div><span>A： 奉行互利共赢的开放战略,</span>
+</div><div><span>B： 坚持内外需协调、进出口平衡、引进来和走出去并重、引资和引技引智并举,</span>
+</div><div><span>C： 发展更高层次的开放型经济,</span>
+</div><div><span>D： 积极参与会球经济治理和公共产品供给,提高我国在全球经济治理中的制度/丝话语权,构建广泛的利益共同体。</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>奉行互利共赢的开放战略,</span><br>
+<span>坚持内外需协调、进出口平衡、引进来和走出去并重、引资和引技引智并举,</span><br>
+<span>发展更高层次的开放型经济,</span><br>
+<span>积极参与会球经济治理和公共产品供给,提高我国在全球经济治理中的制度/丝话语权,构建广泛的利益共同体。</span><br></p><p></div><hr/><h3><span>37. （）深化供给侧结构性改革的策略包括：___</span></h3><div><span>A： 推进增长动能转换,以加快发展先进制造业为重点全面提升实体经济</span>
+</div><div><span>B： 深化要素市场化配置改革，实现由以价取胜向以质取胜的转变</span>
+</div><div><span>C： 加大人力资本培育力度，增更加注重调动和保护人的积极性</span>
+</div><div><span>D： 持续推进“三去一降一补”，优化市场供求结构</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>推进增长动能转换,以加快发展先进制造业为重点全面提升实体经济</span><br>
+<span>深化要素市场化配置改革，实现由以价取胜向以质取胜的转变</span><br>
+<span>加大人力资本培育力度，增更加注重调动和保护人的积极性</span><br>
+<span>持续推进“三去一降一补”，优化市场供求结构</span><br></p><p></div><hr/><h3><span>38. （）贯彻新发展理念</span>&#12289;<span>建设现代化经济体系必须坚持供给侧结构性改革</span>&#12290;<span>坚持质量第一</span>&#12289;<span>效益优先，以供给侧结构性改革为主线，推动</span><strong><em>&#12289;</em></strong>&#12289;<span>___，提高全要素生产率</span>&#12290;</h3><div><span>A： 经济发展</span>
+</div><div><span>B： 效率变革</span>
+</div><div><span>C： 效益变革</span>
+</div><div><span>D： 动力变革</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>经济发展</span><br>
+<span>效率变革</span><br>
+<span>效益变革</span><br></p><p></div><hr/><h3><span>39. （）深化供给侧结构性改革必须建设___劳动力大军</span>&#12290;</h3><div><span>A： 知识性</span>
+</div><div><span>B： 技能性</span>
+</div><div><span>C： 创新性</span>
+</div><div><span>D： 智慧型</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>知识性</span><br>
+<span>技能性</span><br>
+<span>创新性</span><br></p><p></div><hr/><h3><span>40. 要加快建设制造强国，加快发展先进制造业，推动（）和实体经济深度融合</span>&#12290;&#160;</h3><div><span>A： 互联网</span>
+</div><div><span>B： 大数据</span>
+</div><div><span>C： 人工智能</span>
+</div><div><span>D： 科技创新</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>互联网</span><br>
+<span>大数据</span><br>
+<span>人工智能</span><br></p><p></div><hr/><h3><span>41. （）建设现代化经济体系是一个重大___</span>&#12290;</h3><div><span>A： 理论命题</span>
+</div><div><span>B： 理论课题</span>
+</div><div><span>C： 实践命题</span>
+</div><div><span>D： 实践课题</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>理论命题</span><br>
+<span>实践课题</span><br></p><p></div><hr/><h3><span>42. （）建设现代化经济体系是___的必然要求</span>&#12290;</h3><div><span>A： 转变经济发展方式</span>
+</div><div><span>B： 遵循经济发展规律</span>
+</div><div><span>C： 适应我国社会主要矛盾变化</span>
+</div><div><span>D： 保持经济持续健康发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>遵循经济发展规律</span><br>
+<span>适应我国社会主要矛盾变化</span><br>
+<span>保持经济持续健康发展</span><br></p><p></div><hr/><h3><span>43. （）建设现代化经济体系的主要内容：__</span>&#12290;</h3><div><span>A： 要建设创新引领、协同发展的产业体系；</span>
+</div><div><span>B： 要建设统一开放、竞争有序的市场体系；</span>
+</div><div><span>C： 要建设体现效率、促进公平的收入分配体系</span>
+</div><div><span>D： 要建设彰显优势、协调联动的城乡区域发展体系</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>要建设创新引领、协同发展的产业体系；</span><br>
+<span>要建设统一开放、竞争有序的市场体系；</span><br>
+<span>要建设体现效率、促进公平的收入分配体系</span><br>
+<span>要建设彰显优势、协调联动的城乡区域发展体系</span><br></p><p></div><hr/><h3><span>44. （）建设现代化经济体系，需要扎实管用的政策举措和行动</span>&#12290;<span>当前，要突出抓好以下几个方面工作：大力发展实体经济；  加快实施创新驱动发展战略；</span><strong><span>__</span></strong><span>_</span>&#12290;</h3><div><span>A： 激发各类市场主体活力</span>
+</div><div><span>B： 积极推动城乡区域协调发展</span>
+</div><div><span>C： 着力发展开放型经济</span>
+</div><div><span>D： 加快完善社会主义市场经济体制</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>激发各类市场主体活力</span><br>
+<span>积极推动城乡区域协调发展</span><br>
+<span>着力发展开放型经济</span><br>
+<span>加快完善社会主义市场经济体制</span><br></p><p></div><hr/><h3><span>45. （）共享内涵包括__</span></h3><div><span>A： 全民共享</span>
+</div><div><span>B： 全面共享</span>
+</div><div><span>C： 共建共享</span>
+</div><div><span>D： 共享发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>全民共享</span><br>
+<span>全面共享</span><br>
+<span>共建共享</span><br>
+<span>共享发展</span><br></p><p></div><hr/><h3><span>46. （）是一个民族赖以维系的精神纽带，是一个国家共同的思想道德基础</span>&#12290;</h3><div><span>A： 思想意识</span>
+</div><div><span>B： 爱国精神</span>
+</div><div><span>C： 核心价值观</span>
+</div><div><span>D： 共享理念</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            核心价值观</span></p><p></div><hr/><h3><span>47. 文化强国是指一个国家具有强大的（）力量</span>&#12290;</h3><div><span>A： 精神</span>
+</div><div><span>B： 梦想</span>
+</div><div><span>C： 思想</span>
+</div><div><span>D： 文化</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            文化</span></p><p></div><hr/><h3><span>48. 建设社会文化强国，必须培养高度的（）</span>&#12290;</h3><div><span>A： 责任感</span>
+</div><div><span>B： 文化自信</span>
+</div><div><span>C： 理想信念</span>
+</div><div><span>D： 思想觉悟</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            文化自信</span></p><p></div><hr/><h3><span>49. 社会主义核心价值体系组成部分的民族精神的核心是（）</span>&#12290;</h3><div><span>A： 爱国主义</span>
+</div><div><span>B： 中国特色社会主义共同理想</span>
+</div><div><span>C： 改革创新</span>
+</div><div><span>D： 马克思主义指导思想</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            爱国主义</span></p><p></div><hr/><h3><span>50. （）是当代中国精神的集中体现，凝结着全体人民共同价值追求</span>&#12290;</h3><div><span>A： 社会主义核心价值观</span>
+</div><div><span>B： 爱国精神</span>
+</div><div><span>C： 时代精神</span>
+</div><div><span>D： 马克思主义指导思想</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            社会主义核心价值观</span></p><p></div><hr/><h3><span>51. 加强思想道德建设，要提高人民的思想觉悟</span>&#12289;<span>（）</span>&#12289;<span>文明素养，提高权社会文明程度</span>&#12290;</h3><div><span>A： 政治素养</span>
+</div><div><span>B： 文化素养</span>
+</div><div><span>C： 文明素养</span>
+</div><div><span>D： 道德水准</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            道德水准</span></p><p></div><hr/><h3><span>52. ()集中体现了一个国家基于文化而具有的凝聚力和生命力，以及由此产生的吸引力和影响力</span>&#12290;</h3><div><span>A： 文化水平</span>
+</div><div><span>B： 文化软实力</span>
+</div><div><span>C： 文化素质</span>
+</div><div><span>D： 文化程度</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            文化软实力</span></p><p></div><hr/><h3><span>53. （）是我们立党立国的根本之道思想，是中国共产党人的</span>&#8220;<span>真经</span>&#8221;&#12290;</h3><div><span>A： 马克思</span>
+</div><div><span>B： 马克思主义</span>
+</div><div><span>C： 马克思列宁主义</span>
+</div><div><span>D： 马克思列宁主义、毛泽东思想、邓小平理论</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            马克思主义</span></p><p></div><hr/><h3><span>54. （）是人们认识世界</span>&#12289;<span>改造世界的重要工具，是推动历史发展和社会进步的重要力量，与意识形态工作密切相关</span>&#12290;</h3><div><span>A： 人文社会科学</span>
+</div><div><span>B： 社会科学</span>
+</div><div><span>C： 哲学社会科学</span>
+</div><div><span>D： 哲学</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            哲学社会科学</span></p><p></div><hr/><h3><span>55. 人民有信仰，国家有力量，民族有（）</span>&#12290;</h3><div><span>A： 希望</span>
+</div><div><span>B： 发展</span>
+</div><div><span>C： 进步</span>
+</div><div><span>D： 提高</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            希望</span></p><p></div><hr/><h3><span>56. （）应成为中华民族的文化基因，植根在中国人内心深处，潜移默化影响着中国人的思维方式和行为方式</span>&#12290;</h3><div><span>A： 中华民族的历史</span>
+</div><div><span>B： 中华民主的精神</span>
+</div><div><span>C： 中华民族的文化</span>
+</div><div><span>D： 中华优秀传统文化</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            中华优秀传统文化</span></p><p></div><hr/><h3><span>57. （），迫切要求我国由一个文化大国转变成为一个文化强国，这是中华民族几千年文化积淀赋予我们的历史使命</span>&#12290;</h3><div><span>A： 实现中华民族的富强</span>
+</div><div><span>B： 实现中华民族的民主</span>
+</div><div><span>C： 实现中华民族的独立</span>
+</div><div><span>D： 实现中华民族的伟大复兴</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            实现中华民族的伟大复兴</span></p><p></div><hr/><h3><span>58. 要坚持有中国特色社会主义文化发展道路，激发全民族（），建设社会主义文化强国</span>&#12290;</h3><div><span>A： 文化创新力</span>
+</div><div><span>B： 文化创造力</span>
+</div><div><span>C： 文化活力</span>
+</div><div><span>D： 文化创新创造活力</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            文化创新创造活力</span></p><p></div><hr/><h3><span>59. （）是一个国家，一个民族的灵魂</span>&#12290;</h3><div><span>A： 政治</span>
+</div><div><span>B： 经济</span>
+</div><div><span>C： 文化</span>
+</div><div><span>D： 军事</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            文化</span></p><p></div><hr/><h3><span>60. （）形态关乎旗帜</span>&#12289;<span>关乎道路</span>&#12289;<span>关乎国家政治安全</span></h3><div><span>A： 思想</span>
+</div><div><span>B： 意识</span>
+</div><div><span>C： 文化</span>
+</div><div><span>D： 经济</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            意识</span></p><p></div><hr/><h3><span>61. 建设社会主义文化强国，必须大力发展（）</span></h3><div><span>A： 文化服务</span>
+</div><div><span>B： 文化安全</span>
+</div><div><span>C： 文化事业</span>
+</div><div><span>D： 文化产业</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>文化事业</span><br>
+<span>文化产业</span><br></p><p></div><hr/><h3><span>62. 把社会主义核心价值观渗透到学校教育之中，要做到（）</span></h3><div><span>A： 进教材</span>
+</div><div><span>B： 进心里</span>
+</div><div><span>C： 进课堂</span>
+</div><div><span>D： 进头脑</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>进教材</span><br>
+<span>进课堂</span><br>
+<span>进头脑</span><br></p><p></div><hr/><h3><span>63. 培育和践行社会主义核心价值观，要发扬（）精神</span></h3><div><span>A： 伟大创造</span>
+</div><div><span>B： 伟大奋斗</span>
+</div><div><span>C： 伟大团结</span>
+</div><div><span>D： 伟大理想</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>伟大创造</span><br>
+<span>伟大奋斗</span><br>
+<span>伟大团结</span><br></p><p></div><hr/><h3><span>64. 掌握意识形态工作领导权，要（）</span></h3><div><span>A： 旗帜鲜明坚持马克思主义指导地位</span>
+</div><div><span>B： 加快构建中国特色哲学社会科学</span>
+</div><div><span>C： 坚持正确的舆论导向</span>
+</div><div><span>D： 建设好网络空间</span>
+</div><div><span>E： 落实好意识形态工作责任制</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>旗帜鲜明坚持马克思主义指导地位</span><br>
+<span>加快构建中国特色哲学社会科学</span><br>
+<span>坚持正确的舆论导向</span><br>
+<span>建设好网络空间</span><br>
+<span>落实好意识形态工作责任制</span><br></p><p></div><hr/><h3><span>65. 社会层面的价值观</span></h3><div><span>A： 和谐</span>
+</div><div><span>B： 自由</span>
+</div><div><span>C： 公正</span>
+</div><div><span>D： 法治</span>
+</div><div><span>E： 平等</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>自由</span><br>
+<span>公正</span><br>
+<span>法治</span><br>
+<span>平等</span><br></p><p></div><hr/><h3><span>66. 坚持节约资源和保护环境的基本国策，为人民创造良好生产生活环境，努力形成人与自然和谐发展新格局，把（）放在首位</span>&#12290;</h3><div><span>A： 节约资源</span>
+</div><div><span>B： 以人为本</span>
+</div><div><span>C： 可持续发展</span>
+</div><div><span>D： 保护自然</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            节约资源</span></p><p></div><hr/><h3><span>67. 下面哪项不属于我们在生态文明建设中倡导的发展？</span></h3><div><span>A： 绿色发展</span>
+</div><div><span>B： 循环发展</span>
+</div><div><span>C： 低碳发展</span>
+</div><div><span>D： 自然发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            自然发展</span></p><p></div><hr/><h3><span>68. 实行最严格的生态环境保护制度,在环保工作中,</span></h3><div><span>A： 把预防为主、源头治理放在首位</span>
+</div><div><span>B： 把经济效益放在首位</span>
+</div><div><span>C： 把环境评估放在首位</span>
+</div><div><span>D： 把社会效益放在首位</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            把预防为主、源头治理放在首位</span></p><p></div><hr/><h3><span>69. 在生态系统保护和修复中</span></h3><div><span>A： 把预防为主、源头治理放在首位</span>
+</div><div><span>B： 把利用自然力修复生态系统放在首位</span>
+</div><div><span>C： 把环境评估放在首位</span>
+</div><div><span>D： 把环境评估放在首位</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            把利用自然力修复生态系统放在首位</span></p><p></div><hr/><h3><span>70. 推进绿色发展,要构建（）导向的绿色技术创新体系</span></h3><div><span>A： 企业</span>
+</div><div><span>B： 政府</span>
+</div><div><span>C： 市场</span>
+</div><div><span>D： 社会组织</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            市场</span></p><p></div><hr/><h3><span>71. 着力解决突出的环境问题，要构建（）为主导的环境治理体系</span>&#12290;</h3><div><span>A： 政府</span>
+</div><div><span>B： 企业</span>
+</div><div><span>C： 公众参与</span>
+</div><div><span>D： 社会组织</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            政府</span></p><p></div><hr/><h3><span>72. 保护环境就是（）</span></h3><div><span>A： 保护生产关系</span>
+</div><div><span>B： 发展生产力</span>
+</div><div><span>C： 保护生产力</span>
+</div><div><span>D： 完善生产关系</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            保护生产力</span></p><p></div><hr/><h3><span>73. 改善环境就是()</span></h3><div><span>A： 保护生产关系</span>
+</div><div><span>B： 发展生产力</span>
+</div><div><span>C： 保护生产力</span>
+</div><div><span>D： 完善生产关系</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            发展生产力</span></p><p></div><hr/><h3><span>74. 哪条不属于我国当前加强生态系统保护中所划定的控制线？</span></h3><div><span>A： 生态保护红线</span>
+</div><div><span>B： 永久基本农田</span>
+</div><div><span>C： 城镇开发边界</span>
+</div><div><span>D： 海岸线</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            海岸线</span></p><p></div><hr/><h3><span>75. 生态文明的核心是</span></h3><div><span>A： 坚持人与自然和谐共生</span>
+</div><div><span>B： 坚持人类优先</span>
+</div><div><span>C： 坚持自然优先</span>
+</div><div><span>D： 坚持以人为本</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            坚持人与自然和谐共生</span></p><p></div><hr/><h3><span>76. 人与自然相处时应秉持的首要态度</span></h3><div><span>A： 人定胜天</span>
+</div><div><span>B： 尊重自然</span>
+</div><div><span>C： 尊重需要</span>
+</div><div><span>D： 保护自然</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            尊重自然</span></p><p></div><hr/><h3><span>77. 人与自然相处时应遵循的基本原则</span></h3><div><span>A： 战胜自然</span>
+</div><div><span>B： 保护自然</span>
+</div><div><span>C： 顺应自然</span>
+</div><div><span>D： 尊重自然</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            顺应自然</span></p><p></div><hr/><h3><span>78. 人与自然相处时应承担的重要责任</span></h3><div><span>A： 战胜自然</span>
+</div><div><span>B： 保护自然</span>
+</div><div><span>C： 顺应自然</span>
+</div><div><span>D： 尊重自然</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            保护自然</span></p><p></div><hr/><h3><span>79. 绿色发展,就其要义来讲,是要解决好（  ）问题</span>&#12290;</h3><div><span>A： 人的需要如何满足</span>
+</div><div><span>B： 自然如何保护</span>
+</div><div><span>C： 生态文明体制建设</span>
+</div><div><span>D： 人与自然和谐共生</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人与自然和谐共生</span></p><p></div><hr/><h3><span>80. 我们要建设的现代化是（）</span></h3><div><span>A： 人与自然和谐共生的现代化</span>
+</div><div><span>B： 创造更多的物质财富的现代化</span>
+</div><div><span>C： 创造更多精神财富的现代化</span>
+</div><div><span>D： 提供更多优质生态产品的现代化</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人与自然和谐共生的现代化</span></p><p></div><hr/><h3><span>81. 建设生态文明必须深化</span></h3><div><span>A： 生态文明体制改革</span>
+</div><div><span>B： 经济体制改革</span>
+</div><div><span>C： 文化体制改革</span>
+</div><div><span>D： 社会体制改革</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            生态文明体制改革</span></p><p></div><hr/><h3><span>82. ()是我国的基本国策</span></h3><div><span>A： 节约资源</span>
+</div><div><span>B： 绿色发展</span>
+</div><div><span>C： 生态文明</span>
+</div><div><span>D： 保护环境</span>
+</div><div><span>E： 和谐生态</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>节约资源</span><br>
+<span>保护环境</span><br></p><p></div><hr/><h3><span>83. 我国的生态文明建设必须立足于当前特殊的</span></h3><div><span>A： 自然生态环境现状</span>
+</div><div><span>B： 经济发展水平</span>
+</div><div><span>C： 文化建设状况</span>
+</div><div><span>D： 社会政治条件</span>
+</div><div><span>E： 人口素质</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>自然生态环境现状</span><br>
+<span>经济发展水平</span><br>
+<span>文化建设状况</span><br>
+<span>社会政治条件</span><br>
+<span>人口素质</span><br></p><p></div><hr/><h3><span>84. 建设社会主义生态文明就是要</span></h3><div><span>A： 实现人与自然和谐发展</span>
+</div><div><span>B： 建设以资源环境承载力为基础的两型社会</span>
+</div><div><span>C： 建设以自然规律为准则的两型社会</span>
+</div><div><span>D： 建设以可持续发展为目标的两型社会</span>
+</div><div><span>E： 实现物质至上的社会</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>实现人与自然和谐发展</span><br>
+<span>建设以资源环境承载力为基础的两型社会</span><br>
+<span>建设以自然规律为准则的两型社会</span><br>
+<span>建设以可持续发展为目标的两型社会</span><br></p><p></div><hr/><h3><span>85. 在生态环境保护上,一定要树立</span></h3><div><span>A： 大局观</span>
+</div><div><span>B： 长远观</span>
+</div><div><span>C： 整体观</span>
+</div><div><span>D： 利益观</span>
+</div><div><span>E： 对立观</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>大局观</span><br>
+<span>长远观</span><br>
+<span>整体观</span><br></p><p></div><hr/><h3><span>86. 建设美丽中国，我们将按照（）理念</span></h3><div><span>A： 保护自然</span>
+</div><div><span>B： 尊重自然</span>
+</div><div><span>C： 对抗自然</span>
+</div><div><span>D： 顺应自然</span>
+</div><div><span>E： 战胜自然</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>保护自然</span><br>
+<span>尊重自然</span><br>
+<span>顺应自然</span><br></p><p></div><hr/><h3><span>87. 我国社会矛盾已经转化为人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾</span>&#12290;<span>主要依据有（）</span>&#12290;</h3><div><span>A： 经过改革开放40年的发展，我国社会生产力水平总体上显著提高，很多方面进入世界前列</span>
+</div><div><span>B： 人民生活水平显著提高，对美好生活的向往更加强烈。</span>
+</div><div><span>C： 影响满足人民美好生活需要的因素很多，但主要是发展不平衡不充分问题。</span>
+</div><div><span>D： 共同富裕是我们建设社会主义的本质所在。</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>经过改革开放40年的发展，我国社会生产力水平总体上显著提高，很多方面进入世界前列</span><br>
+<span>人民生活水平显著提高，对美好生活的向往更加强烈。</span><br>
+<span>影响满足人民美好生活需要的因素很多，但主要是发展不平衡不充分问题。</span><br></p><p></div><hr/><h3><span>88. 经过长期努力，中国特色社会主义进入新时代，这是我国发展新的历史方位</span>&#12290;<span>中国特色社会主义新时代的内涵包括（）</span>&#12290;</h3><div><span>A： 这个新时代是承前启后、继往开来，在新的历史条件下继续夺取新时代中国特色社会主义伟大胜利的时代。</span>
+</div><div><span>B： 这个新时代是决胜全面小康社会、进而全面建设社会主义现代化强国的时代。</span>
+</div><div><span>C： 这个新时代是全国各族人民团结奋斗、不断创造美好生活、逐步实现全体人民共同富裕的时代。</span>
+</div><div><span>D： 这个新时代是全体中华儿女哿ν心、奋力实现中华民族伟大复兴中国梦的时代。</span>
+</div><div><span>E： 这个新时代是我国日益走近世界舞台中央、不断为人类作出更大贡献的时代。</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>这个新时代是承前启后、继往开来，在新的历史条件下继续夺取新时代中国特色社会主义伟大胜利的时代。</span><br>
+<span>这个新时代是决胜全面小康社会、进而全面建设社会主义现代化强国的时代。</span><br>
+<span>这个新时代是全国各族人民团结奋斗、不断创造美好生活、逐步实现全体人民共同富裕的时代。</span><br>
+<span>这个新时代是全体中华儿女哿ν心、奋力实现中华民族伟大复兴中国梦的时代。</span><br>
+<span>这个新时代是我国日益走近世界舞台中央、不断为人类作出更大贡献的时代。</span><br></p><p></div><hr/><h3><span>89. 习近平新时代中国特色社会主义思想，坚持解放思想</span>&#12289;<span>实事求是</span>&#12289;<span>与时俱进</span>&#12289;<span>求真务实，以全新的视野深化了对（）的认识，实现了重大理论创新</span>&#12290;</h3><div><span>A： 共产党执政规律</span>
+</div><div><span>B： 社会主义建设规律</span>
+</div><div><span>C： 现代化规律</span>
+</div><div><span>D： 人类社会发展规律</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>共产党执政规律</span><br>
+<span>社会主义建设规律</span><br>
+<span>人类社会发展规律</span><br></p><p></div><hr/><h3><span>90. 习近平新时代中国特色社会主义思想是马克思主义中国化的新飞跃，是（）</span>&#12290;</h3><div><span>A： 当代科学社会主义</span>
+</div><div><span>B： 当代中国马克思主义</span>
+</div><div><span>C： 21世纪马克思主义</span>
+</div><div><span>D： 当代唯一科学真理</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>当代中国马克思主义</span><br>
+<span>21世纪马克思主义</span><br></p><p></div><hr/><h3><span>91. 党政军民学，东西南北中，党是领导一切的，必须增强（），自觉维护党中央权威和集团中统一领导</span>&#12290;</h3><div><span>A： 政治意识</span>
+</div><div><span>B： 大局意识</span>
+</div><div><span>C： 核心意识</span>
+</div><div><span>D： 看齐意识</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>政治意识</span><br>
+<span>大局意识</span><br>
+<span>核心意识</span><br>
+<span>看齐意识</span><br></p><p></div><hr/><h3><span>92. ___是两岸关系的政治基础</span>&#12290;</h3><div><span>A： “九二共识”</span>
+</div><div><span>B： 反对“台独”</span>
+</div><div><span>C： 一个中国原则</span>
+</div><div><span>D： 和平统一</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            一个中国原则</span></p><p></div><hr/><h3><span>93. 新中国成立以后，我国各民族的关系是中华民族大家庭里不同成员的关系，奠定这种新型民族关系的基础是___</span></h3><div><span>A： 民族区域自治制度</span>
+</div><div><span>B： 社会主义制度</span>
+</div><div><span>C： 统一和自治相结合</span>
+</div><div><span>D： 各民族共同繁荣</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            社会主义制度</span></p><p></div><hr/><h3><span>94. 为切实推进社会主义协商民主广泛多层次制度化发展，我国从政权机关</span>&#12289;<span>党派团体</span>&#12289;<span>基层组织</span>&#12289;<span>社会组织等方面拓宽协商民主渠道</span>&#12290;<span>我国政权机关的协调渠道主要包括___</span></h3><div><span>A： 政党协商、政协协商</span>
+</div><div><span>B： 政党协商、政府协商</span>
+</div><div><span>C： 人大协商、政府协商</span>
+</div><div><span>D： 人大协商、政协协商</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人大协商、政府协商</span></p><p></div><hr/><h3><span>95. 发展社会主义民主政治，最根本的是要___</span></h3><div><span>A： 坚持党的领导、人民当家作主和依法治国的有机统一</span>
+</div><div><span>B： 实现民主政治的制度化、规范化、程序化</span>
+</div><div><span>C： 充分发挥人民群众的监督作用</span>
+</div><div><span>D： 有领导、有步骤地推进政治体制改革</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            坚持党的领导、人民当家作主和依法治国的有机统一</span></p><p></div><hr/><h3><span>96. 十九大报告指出，要加强协商民主制度建设，形成完整的___和参与实践，保证人民在日常政治生活中有广泛持续深入参与的权利</span>&#12290;</h3><div><span>A： 法律体系</span>
+</div><div><span>B： 制度体系</span>
+</div><div><span>C： 制度程序</span>
+</div><div><span>D： 协商程序</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            制度程序</span></p><p></div><hr/><h3><span>97. 全面贯彻党的宗教工作基本方针，坚持我国宗教的___方向，积极引导宗教与社会主义社会相适应</span>&#12290;</h3><div><span>A： 世界化</span>
+</div><div><span>B： 大众化</span>
+</div><div><span>C： 民主化</span>
+</div><div><span>D： 中国化</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            中国化</span></p><p></div><hr/><h3><span>98. 走中国特色社会主义政治发展道路，必须坚持党的领导</span>&#12289;<span>人民当家作主</span>&#12289;<span>依法治国有机统一</span>&#12290;<span>___是社会主义民主政治的本质特征</span>&#12290;</h3><div><span>A： 党的领导</span>
+</div><div><span>B： 人民当家作主</span>
+</div><div><span>C： 依法治国</span>
+</div><div><span>D： 协商民主</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人民当家作主</span></p><p></div><hr/><h3><span>99. 发展社会主义民主政治是中国共产党团结带领中国人民实现中华民族伟大复兴中国梦的政治保证</span>&#12290;<span>党领导人民治理国家的基本方式是___</span>&#12290;</h3><div><span>A： 党的领导</span>
+</div><div><span>B： 人民当家作主</span>
+</div><div><span>C： 依法治国</span>
+</div><div><span>D： 协商民主</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            依法治国</span></p><p></div><hr/><h3><span>100. 发展社会主义民主政治就是要体现人民意志</span>&#12289;<span>保障人民权益</span>&#12289;<span>激发人民创造活力，用___保证人民当家作主</span>&#12290;</h3><div><span>A： 民主管理</span>
+</div><div><span>B： 制度体系</span>
+</div><div><span>C： 民主决策</span>
+</div><div><span>D： 民主监督</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            制度体系</span></p><p></div><hr/><h3><span>101. 加强人民当家作主制度保障</span>&#12290;<span>___是坚持党的领导</span>&#12289;<span>人民当家作主</span>&#12289;<span>依法治国有机统一的根本政治安排</span>&#12290;</h3><div><span>A： 人民代表大会制度</span>
+</div><div><span>B： 人民民主专政</span>
+</div><div><span>C： 中国共产党领导的多党合作和政治协商制度</span>
+</div><div><span>D： 基层群众自治制度</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人民代表大会制度</span></p><p></div><hr/><h3><span>102. 实行人民民主,保证人民当家作主,要求治国理政大政方针在人民内部各方面进行广泛商量</span>&#12290;<span>有事好商量，众人的事情由众人商量，是人民民主的真谛</span>&#12290;<span>因此，要发挥___的重要作用</span>&#12290;</h3><div><span>A： 协商民主</span>
+</div><div><span>B： 基层群众自治制度</span>
+</div><div><span>C： 人民民主</span>
+</div><div><span>D： 人民代表大会制度</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            协商民主</span></p><p></div><hr/><h3><span>103. 社会主义协商民主的重要渠道和专门协商机构是___</span>&#12290;</h3><div><span>A： 人民政协</span>
+</div><div><span>B： 人民代表大会</span>
+</div><div><span>C： 仲裁委员会</span>
+</div><div><span>D： 基层群众自治组织</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人民政协</span></p><p></div><hr/><h3><span>104. 人民政协履行政治协商</span>&#12289;<span>参政议政，民主监督职能围绕的主题是___</span></h3><div><span>A： 团结和民主</span>
+</div><div><span>B： 党的中心任务</span>
+</div><div><span>C： 加强党的领导</span>
+</div><div><span>D： 发挥统一战线优势</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            团结和民主</span></p><p></div><hr/><h3><span>105. 人民政协根植于中国历史文化，产生于近代以后中国人民革命的伟大斗争，发展于中国特色社会主义光辉实践，具有鲜明中国特色</span>&#12290;<span>对人民政协理解正确的是___</span></h3><div><span>A： 围绕民主和团结主题开展活动</span>
+</div><div><span>B： 社会主义事业的领导核心</span>
+</div><div><span>C： 服从中央人民政府的统一领导</span>
+</div><div><span>D： 受人大委托，向人大负责</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            围绕民主和团结主题开展活动</span></p><p></div><hr/><h3><span>106. 发展社会主义民主政治要___</span></h3><div><span>A： 体现人民意志</span>
+</div><div><span>B： 保障人民权益</span>
+</div><div><span>C： 激发人民创造活力</span>
+</div><div><span>D： 用制度体系保证人民当家作主</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>体现人民意志</span><br>
+<span>保障人民权益</span><br>
+<span>激发人民创造活力</span><br>
+<span>用制度体系保证人民当家作主</span><br></p><p></div><hr/><h3><span>107. 以下属于人民当家作主制度体系的是___</span></h3><div><span>A： 人民代表大会制度</span>
+</div><div><span>B： 中国共产党领导的多党合作和政治协商制度</span>
+</div><div><span>C： 民族区域自治制度</span>
+</div><div><span>D： 基层群众自治制度</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>人民代表大会制度</span><br>
+<span>中国共产党领导的多党合作和政治协商制度</span><br>
+<span>民族区域自治制度</span><br>
+<span>基层群众自治制度</span><br></p><p></div><hr/><h3><span>108. 要推动协商民主___发展，统筹推进政治协商</span>&#12289;<span>人大协商</span>&#12289;<span>政府协商</span>&#12289;<span>政协协商</span>&#12289;<span>人民团体协商</span>&#12289;<span>基层协商以及社会组织协商</span>&#12290;</h3><div><span>A： 广泛</span>
+</div><div><span>B： 全面</span>
+</div><div><span>C： 多层</span>
+</div><div><span>D： 制度化</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>广泛</span><br>
+<span>多层</span><br>
+<span>制度化</span><br></p><p></div><hr/><h3><span>109. 基层群众自治制度是我国的一项基本政治制度</span>&#12290;<span>完善基层民主制度，畅通民主渠道，健全基层选举</span>&#12289;<span>议事</span>&#12289;<span>公开</span>&#12289;<span>述职</span>&#12289;<span>问责等机制，促进群众在城乡社区治理</span>&#12289;<span>基层公共事务和公益事业中依法___</span>&#12290;</h3><div><span>A： 自我管理</span>
+</div><div><span>B： 自我服务</span>
+</div><div><span>C： 自我教育</span>
+</div><div><span>D： 自我监督</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>自我管理</span><br>
+<span>自我服务</span><br>
+<span>自我教育</span><br>
+<span>自我监督</span><br></p><p></div><hr/><h3><span>110. 解决台湾问题</span>&#12289;<span>实现祖国完全统一，是全体中华儿女共同愿望，是中华民族根本利益所在，是新时代中国共产党</span>&#12289;<span>中国政府的三大历史任务之一</span>&#12290;<span>解决台湾问题</span>&#12289;<span>实现祖国统一，要___</span>&#12290;</h3><div><span>A： 坚持“和平统一、一国两制”方针</span>
+</div><div><span>B： 推动两岸关系和平发展</span>
+</div><div><span>C： 坚持一个中国原则和“九二共识”</span>
+</div><div><span>D： 携手同心共圆民族复兴中国梦</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>坚持“和平统一、一国两制”方针</span><br>
+<span>推动两岸关系和平发展</span><br>
+<span>坚持一个中国原则和“九二共识”</span><br>
+<span>携手同心共圆民族复兴中国梦</span><br></p><p></div><hr/><h3><span>111. 保持香港</span>&#12289;<span>澳门长期繁荣稳定，必须全面准确贯彻</span><strong></strong><span>的方针</span>&#12290;</h3><div><span>A： “一国两制”</span>
+</div><div><span>B： “港人治港”</span>
+</div><div><span>C： “人治澳”</span>
+</div><div><span>D： 高度自治</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>“一国两制”</span><br>
+<span>“港人治港”</span><br>
+<span>“人治澳”</span><br>
+<span>高度自治</span><br></p><p></div><hr/><h3><span>112. 要支持香港</span>&#12289;<span>澳门融入国家发展大局，以___为重点，全面推进内地同香港</span>&#12289;<span>澳门互利合作</span>&#12290;</h3><div><span>A： 粤港澳大湾区建设</span>
+</div><div><span>B： 粤港澳合作</span>
+</div><div><span>C： 粤港澳政府合作</span>
+</div><div><span>D： 泛珠三角区域合作</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>粤港澳大湾区建设</span><br>
+<span>粤港澳合作</span><br>
+<span>泛珠三角区域合作</span><br></p><p></div><hr/><h3><span>113. 过去五年，全面准确贯彻</span>&#8220;<span>一国两制</span>&#8221;<span>方针，牢牢掌握</span><strong><em><span>和</span></em></strong><span>赋予的中央对香港</span>&#12289;<span>澳门全面管治权，深化内地和港澳地区交流合作，保持香港</span>&#12289;<span>澳门繁荣稳定</span>&#12290;</h3><div><span>A： 宪法</span>
+</div><div><span>B： 法律</span>
+</div><div><span>C： 法规</span>
+</div><div><span>D： 基本法</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>宪法</span><br>
+<span>基本法</span><br></p><p></div><hr/><h3><span>114. 中国特色社会主义政治发展道路，是近代以来中国人民长期奋斗___的必然结果，是坚持党的本质属性</span>&#12289;<span>践行党的根本宗旨的必然要求</span>&#12290;</h3><div><span>A： 历史逻辑</span>
+</div><div><span>B： 理论逻辑</span>
+</div><div><span>C： 实践逻辑</span>
+</div><div><span>D： 现实逻辑</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>历史逻辑</span><br>
+<span>理论逻辑</span><br>
+<span>实践逻辑</span><br></p><p></div><hr/><h3><span>115. （    ）是社会建设的重大任务，是国家治理的重要内容</span>&#12290;</h3><div><span>A： 社会治理</span>
+</div><div><span>B： 社会管理</span>
+</div><div><span>C： 政府治理</span>
+</div><div><span>D： 政府管理</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            社会治理</span></p><p></div><hr/><h3><span>116. 动员全党全国全社会力量，坚持精准扶贫</span>&#12289;<span>精准脱贫，坚持中央统筹</span>&#12289;<span>省总负责</span>&#12289;<span>市县抓落实的工作机制，强化党政一把手负总责的责任制，注重扶贫同（   ）相结合，深入实施东西部扶贫协作，重点攻克深度贫困地区脱贫任务</span>&#12290;</h3><div><span>A： 扶志</span>
+</div><div><span>B： 扶德、扶智</span>
+</div><div><span>C： 扶德、扶志</span>
+</div><div><span>D： 扶志、扶智</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            扶志、扶智</span></p><p></div><hr/><h3><span>117. 深化（       ）改革，健全现代医院管理制度</span>&#12290;</h3><div><span>A： 医疗卫生和医疗保障</span>
+</div><div><span>B： 医疗卫生、医疗保障和医疗服务</span>
+</div><div><span>C： 医疗卫生、医疗服务和药品供应</span>
+</div><div><span>D： 医疗卫生、医疗保障、医疗服务和药品供应</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            医疗卫生、医疗保障、医疗服务和药品供应</span></p><p></div><hr/><h3><span>118. 加快一流大学和一流学科建设，实现高等教育（   ）发展</span>&#12290;</h3><div><span>A： 外延式</span>
+</div><div><span>B： 内涵式</span>
+</div><div><span>C： 内延式</span>
+</div><div><span>D： 全面</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            内涵式</span></p><p></div><hr/><h3><span>119. 办好继续教育，加快建设（    ）社会，大力提高国民素质</span>&#12290;</h3><div><span>A： 创新型</span>
+</div><div><span>B： 科技型</span>
+</div><div><span>C： 学习型</span>
+</div><div><span>D： 道德型</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            学习型</span></p><p></div><hr/><h3><span>120. （  ）是最大的民生</span>&#12290;</h3><div><span>A： 就业</span>
+</div><div><span>B： 教育</span>
+</div><div><span>C： 医疗</span>
+</div><div><span>D： 社会保障</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            就业</span></p><p></div><hr/><h3><span>121. 鼓励勤劳守法致富，扩大（    ）群体，增加低收入者收入，调节过高收入，取缔非法收入</span>&#12290;</h3><div><span>A： 中等收入</span>
+</div><div><span>B： 低收入</span>
+</div><div><span>C： 高收入</span>
+</div><div><span>D： 中低收入</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            中等收入</span></p><p></div><hr/><h3><span>122. 消除贫困</span>&#12289;<span>改善民生</span>&#12289;<span>逐步实现（    ），是社会主义的本质要求</span>&#12290;</h3><div><span>A： 整体脱贫</span>
+</div><div><span>B： 精准脱贫</span>
+</div><div><span>C： 同步富裕</span>
+</div><div><span>D： 共同富裕</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            共同富裕</span></p><p></div><hr/><h3><span>123. 确保到（  ）年我国现行标准下农村贫困人口实现脱贫，贫困县全部摘帽，解决区域性整体贫困，做到脱真贫</span>&#12289;<span>真脱贫</span>&#12290;</h3><div><span>A： 2020</span>
+</div><div><span>B： 2025</span>
+</div><div><span>C： 2035</span>
+</div><div><span>D： 2050</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            2020</span></p><p></div><hr/><h3><span>124. 要完善国民健康政策，为人民群众提供（    ）健康服务</span>&#12290;</h3><div><span>A： 全周期宽领域</span>
+</div><div><span>B： 全方位宽领域</span>
+</div><div><span>C： 深层次全周期</span>
+</div><div><span>D： 全方位全周期</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            全方位全周期</span></p><p></div><hr/><h3><span>125. 坚持完善党委领导</span>&#12289;<span>政府负责</span>&#12289;<span>社会协同</span>&#12289;<span>公众参与</span>&#12289;<span>法治保障的社会治理体制，提高社会治理体制，提高社会治理社会化</span>&#12289;<span>法治化</span>&#12289;<span>智能化</span>&#12289;<span>专业化水平，推进社会治理精细化，打造（     ）的社会治理格局</span>&#12290;</h3><div><span>A： 共商共建共治</span>
+</div><div><span>B： 共商共治共享</span>
+</div><div><span>C： 共建共治共享</span>
+</div><div><span>D： 共建共治共赢</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            共建共治共享</span></p><p></div><hr/><h3><span>126. 总体国家安全观是指坚持国家利益至上，以（    ）为宗旨，以（    ）为根本，以（    ）为基础，以军事</span>&#12289;<span>文化</span>&#12289;<span>社会安全为保障，以促进国际安全为依托，维护各领域国家安全，构建国家安全体系，走中国特色国家安全道路</span>&#12290;</h3><div><span>A： 人民安全、政治安全、经济安全</span>
+</div><div><span>B： 政治安全、人民安全、经济安全</span>
+</div><div><span>C： 社会安全、政治安全、经济安全</span>
+</div><div><span>D： 社会安全、人民安全、经济安全</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人民安全、政治安全、经济安全</span></p><p></div><hr/><h3><span>127. </span><p>&ldquo;<span>全民国家安全教育日</span>&rdquo;<span>为每年的（ ）。</span></p></h3><div><span>A： 4月15日</span>
+</div><div><span>B： 5月15日</span>
+</div><div><span>C： 6月20日</span>
+</div><div><span>D： 10月19日</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            4月15日</span></p><p></div><hr/><h3><span>128. （  ）是国家安全的重要体现，一头连着经济社会发展，一头连着千家万户，是最基本的民生</span>&#12290;</h3><div><span>A： 公共安全</span>
+</div><div><span>B： 文化安全</span>
+</div><div><span>C： 社会安全</span>
+</div><div><span>D： 科技安全</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            公共安全</span></p><p></div><hr/><h3><span>129. 一个社会是否文明进步</span>&#12289;<span>安定和谐，很大程度上取决于公民的（    ）</span>&#12290;<span>加强和改进思想政治工作，更加注重人文关怀和心理疏导，着力促进公民道德素质的提升</span>&#12290;</h3><div><span>A： 思想道德素质</span>
+</div><div><span>B： 经济收入</span>
+</div><div><span>C： 学历水平</span>
+</div><div><span>D： 心理健康</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            思想道德素质</span></p><p></div><hr/><h3><span>130. 在中国特色社会主义新时代，我们要以更大的力度</span>&#12289;<span>更实的措施保障和改善民生，加强和创新社会治理，坚决打赢脱贫攻坚战，促进社会公平正义，在幼有所育</span>&#12289;<span>学有所教</span>&#12289;<span>劳有所得</span>&#12289;<span>（             ）上不断取得新进展，让实现全体人民共同富裕在广大人民现实生活中更加充分地展示出来</span>&#12290;</h3><div><span>A： 病有所医</span>
+</div><div><span>B： 老有所养</span>
+</div><div><span>C： 住有所居</span>
+</div><div><span>D： 弱有所扶</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>病有所医</span><br>
+<span>老有所养</span><br>
+<span>住有所居</span><br>
+<span>弱有所扶</span><br></p><p></div><hr/><h3><span>131. 完善（        ）共同参与的协商协调机制，构建和谐劳动关系</span>&#12290;</h3><div><span>A： 政府</span>
+</div><div><span>B： 工会</span>
+</div><div><span>C： 企业</span>
+</div><div><span>D： 居民</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>政府</span><br>
+<span>工会</span><br>
+<span>企业</span><br></p><p></div><hr/><h3><span>132. 坚持房子是用来住的</span>&#12289;<span>不是用来炒的定位，加快建立（            ）的住房制度，让全体人民住有所居</span>&#12290;</h3><div><span>A： 多主体供给</span>
+</div><div><span>B： 全方位覆盖</span>
+</div><div><span>C： 多渠道保障</span>
+</div><div><span>D： 租购并举</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>多主体供给</span><br>
+<span>多渠道保障</span><br>
+<span>租购并举</span><br></p><p></div><hr/><h3><span>133. 党和政府应加强和创新对建设社会主义和谐社会各项工作的领导，把（  ）</span>&#12289;<span>（  ）</span>&#12289;<span>（  ）作为社会建设的根本任务，让全体人民在共建共治共享发展中有更多获得感</span>&#12289;<span>幸福感和安全感</span>&#12290;</h3><div><span>A： 加强国家安全教育</span>
+</div><div><span>B： 改善民生</span>
+</div><div><span>C： 创新社会治理</span>
+</div><div><span>D： 坚持总体国家安全观</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>改善民生</span><br>
+<span>创新社会治理</span><br>
+<span>坚持总体国家安全观</span><br></p><p></div><hr/><h3><span>134. 完善矛盾纠纷多元化解机制，积极推动</span>&#12289;&#12289;<span>联动工作体系形成</span>&#12290;</h3><div><span>A： 人民调解</span>
+</div><div><span>B： 行政调解</span>
+</div><div><span>C： 司法调解</span>
+</div><div><span>D： 社会调节</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>人民调解</span><br>
+<span>行政调解</span><br>
+<span>司法调解</span><br></p><p></div><hr/><h3><span>135. 社会信息化的一个重要标志是（）</span>&#12290;</h3><div><span>A： 云计算的广泛应用</span>
+</div><div><span>B： 数字经济的发展</span>
+</div><div><span>C： 互联网的飞速发展和广泛应用</span>
+</div><div><span>D： 经济全球化的影响</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            互联网的飞速发展和广泛应用</span></p><p></div><hr/><h3><span>136. 国家主席习近平提出构建以合作共赢为核心的新型国际关系，打造人类命运共同体</span>&#12290;<span>中国将在这一重要外交思想指引下，始终做世界和平的坚定捍卫者和国际地区秩序的坚定维护者</span>&#12289;<span>建设者</span>&#12289;<span>贡献者</span>&#12290;<span>中国指导国家间关系的基本准则是</span></h3><div><span>A： 独立自主地处理一切国际事务的原则</span>
+</div><div><span>B： 和平共处五项原则</span>
+</div><div><span>C： 同发展中国家加强团结与合作的原则</span>
+</div><div><span>D： 爱国主义与履行国际义务相统一的原则</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            和平共处五项原则</span></p><p></div><hr/><h3><span>137. 中国外交政策的宗旨是（）</span></h3><div><span>A： 维护世界和平、促进共同发展</span>
+</div><div><span>B： 独立自主</span>
+</div><div><span>C： 和平共处五项原则</span>
+</div><div><span>D： 加强和巩固同广大发展中国家的团结与合作</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            维护世界和平、促进共同发展</span></p><p></div><hr/><h3><span>138. 新世纪以来，我国总体外交布局不断丰富完善，形成国别</span>&#12289;<span>区和各领域外交工作相辅相成</span>&#12289;<span>相互促进</span>&#12289;<span>双多边结合</span>&#12289;<span>政经文互动的外交架构，全方位推进了我国的外交工作</span>&#12290;<span>在处理国际关系和外交关系方面，我国坚持的外交工作布局是（）</span>&#12290;</h3><div><span>A： 大国是关键、周边是首要、发展中国家是基础，多边是舞台</span>
+</div><div><span>B： 加强同发展中国家的团结与合作，努力发展大国间长期稳定的友好合作关系</span>
+</div><div><span>C： 发展同所有国家的友好合作关系，高度重视第三世界国家的战略地位和作用</span>
+</div><div><span>D： 统筹国内发展和对外开放，不断扩大同各国的互利合作</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            大国是关键、周边是首要、发展中国家是基础，多边是舞台</span></p><p></div><hr/><h3><span>139. 2013年（）月和（）月,习近平在出访中亚和东南亚国家期间,先后提出共建</span>&#8220;<span>丝绸之路经济带</span>&#8221;<span>和</span>&#8220;<span>21世纪海上丝绸之路</span>&#8221;<span>的重大倡议,得到了国际社会的高度关注和积极回应</span>&#12290;</h3><div><span>A： 4月和5月</span>
+</div><div><span>B： 9月和10月</span>
+</div><div><span>C： 11月和13月</span>
+</div><div><span>D： 7月和8月</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            9月和10月</span></p><p></div><hr/><h3><span>140. </span>&#8220;<span>新亚欧大陆桥</span>&#8221;<span>的主要路线是东起太平洋西岸()等中国东部沿海港口，西可达大西洋东岸荷兰的鹿特丹</span>&#12289;<span>比利时的安特卫普等港口，横贯亚欧两大洲中部地带</span>&#12290;</h3><div><span>A： 大连</span>
+</div><div><span>B： 连云港</span>
+</div><div><span>C： 青岛</span>
+</div><div><span>D： 广州</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            连云港</span></p><p></div><hr/><h3><span>141. 在处理国际关系和外交关系方面，我国的外交工作布局中作为首要的是</span></h3><div><span>A： 大国外交</span>
+</div><div><span>B： 与发展中国家的外交</span>
+</div><div><span>C： 周边外交</span>
+</div><div><span>D： 多边外交</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            周边外交</span></p><p></div><hr/><h3><span>142. </span>&#8220;<span>丝路精神</span>&#8221;<span>即</span>&#8220;<span>丝绸之路</span>&#8221;<span>精神的简称</span>&#12290;<span>下面哪一个不属于</span>&#8220;<span>丝路精神</span>&#8221;<span>的内涵？（）</span></h3><div><span>A： 和平合作</span>
+</div><div><span>B： 开放包容</span>
+</div><div><span>C： 互学互鉴</span>
+</div><div><span>D： 互惠互利</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            互惠互利</span></p><p></div><hr/><h3><span>143. 构建</span>&#8220;<span>丝绸之路经济带</span>&#8221;<span>，要创新合作模式，加强</span>&#8220;<span>五通</span>&#8221;<span>，即政策沟通</span>&#12289;<span>设施联通</span>&#12289;<span>贸易畅通</span>&#12289;<span>资金融通和</span></h3><div><span>A： 情谊相通</span>
+</div><div><span>B： 和平相通</span>
+</div><div><span>C： 民心相通</span>
+</div><div><span>D： 友谊相通</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            民心相通</span></p><p></div><hr/><h3><span>144. 推动国际社会从伙伴关系</span>&#12289;<span>安全格局</span>&#12289;<span>经济发展</span>&#12289;<span>文明交流</span>&#12289;<span>（）等方面为建立人类命运共同体作出努力</span>&#12290;</h3><div><span>A： 生态建设</span>
+</div><div><span>B： 文化建设</span>
+</div><div><span>C： 经济建设</span>
+</div><div><span>D： 政治建设</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            生态建设</span></p><p></div><hr/><h3><span>145. 11</span>&#12289;<span>经济全球化有利于促进资本</span>&#12289;<span>技术</span>&#12289;<span>（）等生产要素在全球范围内的优化配置,为全球经济和社会发展提供了前所未有的物质技术条件,给各国各地区提供了新的发展机遇</span>&#12290;</h3><div><span>A： 能源</span>
+</div><div><span>B： 知识</span>
+</div><div><span>C： 人才</span>
+</div><div><span>D： 产业</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            知识</span></p><p></div><hr/><h3><span>146. 历史上的海上丝绸之路是从下列哪个地区出发的</span>&#12290;</h3><div><span>A： 天津沿海港口</span>
+</div><div><span>B： 重庆沿海港口</span>
+</div><div><span>C： 广东沿海港口</span>
+</div><div><span>D： 山东沿海港口</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            广东沿海港口</span></p><p></div><hr/><h3><span>147. 13</span>&#12289;<span>构建人类命运共同体，经济上要同舟共济,促进贸易和投资自由化便利化,推动经济全球化朝着更加开放</span>&#12289;<span>包容</span>&#12289;<span>（）</span>&#12289;<span>平衡</span>&#12289;<span>共赢的方向发展</span>&#12290;</h3><div><span>A： 普惠</span>
+</div><div><span>B： 合作</span>
+</div><div><span>C： 和谐</span>
+</div><div><span>D： 友善</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            普惠</span></p><p></div><hr/><h3><span>148. 中国倡导建立相互尊重</span>&#12289;<span>公平正义</span>&#12289;<span>合作共赢的新型国际关系,核心是（）</span>&#12290;</h3><div><span>A： 尊重领土主权</span>
+</div><div><span>B： 维护联合国宪章的宗旨和原则</span>
+</div><div><span>C： 维护世界和平</span>
+</div><div><span>D： 促进共同发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            维护联合国宪章的宗旨和原则</span></p><p></div><hr/><h3><span>149. 1</span>&#12289;<span>中国坚定不移地奉行独立自主的和平外交政策,走和平发展道路,这是由我国的（）决定的</span></h3><div><span>A： 社会主义性质和国际地位</span>
+</div><div><span>B： 国家利益和国家力量</span>
+</div><div><span>C： 国际关系和国家主权</span>
+</div><div><span>D： 党的性质和政府宗旨</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            社会主义性质和国际地位</span></p><p></div><hr/><h3><span>150. 中国走和平发展的道路，就是要（）</span>&#12290;</h3><div><span>A： 把和平与发展联系起来</span>
+</div><div><span>B： 把中国国内发展与对外开放统一起来</span>
+</div><div><span>C： 把中国的发展与世界的发展联系起来</span>
+</div><div><span>D： 把中国人的利益与世界人民的共同利益结合起来</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>把和平与发展联系起来</span><br>
+<span>把中国国内发展与对外开放统一起来</span><br>
+<span>把中国的发展与世界的发展联系起来</span><br>
+<span>把中国人的利益与世界人民的共同利益结合起来</span><br></p><p></div><hr/><h3><span>151. 下列关于时代主题</span>&#8212;&#8212;<span>和平与发展的论断，表述正确的是（）</span>&#12290;</h3><div><span>A： 和平问题是东西问题</span>
+</div><div><span>B： 发展问题是南北问题</span>
+</div><div><span>C： 南北问题是核心问题</span>
+</div><div><span>D： 东西问题是核心问题</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>和平问题是东西问题</span><br>
+<span>发展问题是南北问题</span><br>
+<span>南北问题是核心问题</span><br></p><p></div><hr/><h3><span>152. 中国坚持独立自主和平外交政策，就是要（）</span>&#12290;</h3><div><span>A： 把国家主权和安全放在第一位,坚定地维护我国的国家利益,反对任何国家损害我国的独立、主权、安全和尊严</span>
+</div><div><span>B： B.从我国人民和世界人民的根本利益出发,对于一切国际事务,都要根据事情本身的是非曲直决定自己的立场和政策秉持公道,伸张正义,不屈从于任何外来压力</span>
+</div><div><span>C： 坚持各国的事务应由本国政府和人民决定,世界上的事情应由各国政府和人民平等协商,反对一切形式的霸权主义和强权政治</span>
+</div><div><span>D： 主张和平解决国际争端和热点问题,反对动辄诉诸武力或以武力相威胁,反对颠覆别国合法政权,反对一切形式的恐怖主义</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>把国家主权和安全放在第一位,坚定地维护我国的国家利益,反对任何国家损害我国的独立、主权、安全和尊严</span><br>
+<span>B.从我国人民和世界人民的根本利益出发,对于一切国际事务,都要根据事情本身的是非曲直决定自己的立场和政策秉持公道,伸张正义,不屈从于任何外来压力</span><br>
+<span>坚持各国的事务应由本国政府和人民决定,世界上的事情应由各国政府和人民平等协商,反对一切形式的霸权主义和强权政治</span><br>
+<span>主张和平解决国际争端和热点问题,反对动辄诉诸武力或以武力相威胁,反对颠覆别国合法政权,反对一切形式的恐怖主义</span><br></p><p></div><hr/><h3><span>153. 推动建立以合作共赢为核心的新型国际关系，是我们党立足时代发展潮流和我国根本利益做出的战略选择，反映了中国人民和世界人民的共同心愿</span>&#12290;<span>新型国际关系，新在（）</span>&#12290;</h3><div><span>A： 相互尊重</span>
+</div><div><span>B： 合作共赢</span>
+</div><div><span>C： 共同发展</span>
+</div><div><span>D： 公平正义</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>相互尊重</span><br>
+<span>合作共赢</span><br>
+<span>公平正义</span><br></p><p></div><hr/><h3><span>154. 构建人类命运共同体思想的核心是建设（）清洁美丽的世界</span>&#12290;</h3><div><span>A： 持久和平</span>
+</div><div><span>B： 普遍安全</span>
+</div><div><span>C： 共同繁荣</span>
+</div><div><span>D： 开放包容</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>持久和平</span><br>
+<span>普遍安全</span><br>
+<span>共同繁荣</span><br>
+<span>开放包容</span><br></p><p></div><hr/><h3><span>155. 为了坚持党的领导核心地位，必须确保党始终</span></h3><div><span>A： 总览全局、协调各方</span>
+</div><div><span>B： 既民主又集中</span>
+</div><div><span>C： 坚持马克思主义</span>
+</div><div><span>D： 以人民为中心</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            总览全局、协调各方</span></p><p></div><hr/><h3><span>156. 确保党始终统揽全局</span>&#12289;<span>协调各方，必须增强四个意识，自觉维护党中央权威和集中统一领导</span>&#12290;&#8220;<span>四个意识</span>&#8221;<span>是指</span></h3><div><span>A： 政治意识、经济意识、文化意识、社会意识</span>
+</div><div><span>B： 政治意识、民主意识、权威意识、领导意识</span>
+</div><div><span>C： 政治意识、大局意识、核心意识、看齐意识</span>
+</div><div><span>D： 政治意识、领导意识、大局意识、核心意识</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            政治意识、大局意识、核心意识、看齐意识</span></p><p></div><hr/><h3><span>157. 党的十九大指出，党政军民学，东西南北中，</span></h3><div><span>A： 党是领导经济工作的</span>
+</div><div><span>B： 党是领导文化工作的</span>
+</div><div><span>C： 党是领导社会工作的</span>
+</div><div><span>D： 党是领导一切的</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            党是领导一切的</span></p><p></div><hr/><h3><span>158. 中国共产党是两个先锋队，一个是中国工人阶级的先锋队，另一个是</span></h3><div><span>A： 中国人民的先锋队</span>
+</div><div><span>B： 中华民族的先锋队</span>
+</div><div><span>C： 中国人民和中华民族的先锋队</span>
+</div><div><span>D： 世界人民的先锋队</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            中国人民和中华民族的先锋队</span></p><p></div><hr/><h3><span>159. 中国特色社会主义最本质的特征是</span></h3><div><span>A： 人民代表大会制度</span>
+</div><div><span>B： 党的领导</span>
+</div><div><span>C： 生产资料公有制</span>
+</div><div><span>D： 按劳分配</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            党的领导</span></p><p></div><hr/><h3><span>160. 中国特色社会主义制度的最大优势是</span></h3><div><span>A： 人民代表大会制度</span>
+</div><div><span>B： 党的领导</span>
+</div><div><span>C： 生产资料公有制</span>
+</div><div><span>D： 按劳分配</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            党的领导</span></p><p></div><hr/><h3><span>161. 中国共产党的最高理想和最终目标是</span></h3><div><span>A： 实现中华民族伟大复兴</span>
+</div><div><span>B： 实现两个百年梦想</span>
+</div><div><span>C： 夺取中国特色社会主义的伟大胜利</span>
+</div><div><span>D： 实现共产主义</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            实现共产主义</span></p><p></div><hr/><h3><span>162. 新时代中国共产党的历史使命之一是统揽四个伟大</span>&#12290;&#8220;<span>四个伟大</span>&#8221;<span>是</span></h3><div><span>A： 伟大斗争、伟大工程、伟大事业、伟大目标</span>
+</div><div><span>B： 伟大梦想、伟大斗伟大工程、伟大关系</span>
+</div><div><span>C： 伟大斗争、伟大工程、伟大事业、伟大梦想</span>
+</div><div><span>D： 伟大理想、伟大事业、伟大梦想、伟大工程</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            伟大斗争、伟大工程、伟大事业、伟大梦想</span></p><p></div><hr/><h3><span>163. </span>&#8220;<span>四个伟大</span>&#8221;<span>是有机统一的整体</span>&#12290;<span>其中，起决定性作用的是</span></h3><div><span>A： 伟大工程</span>
+</div><div><span>B： 伟大斗争</span>
+</div><div><span>C： 伟大梦想</span>
+</div><div><span>D： 伟大事业</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            伟大工程</span></p><p></div><hr/><h3><span>164. 党的十九大指出，我们要更加自觉地增强四个自信，既不走封闭僵化的老路，也不走</span></h3><div><span>A： 改旗易帜的邪路</span>
+</div><div><span>B： 资本主义道路</span>
+</div><div><span>C： 民主社会主义道路</span>
+</div><div><span>D： 第三条中间道路</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            改旗易帜的邪路</span></p><p></div><hr/><h3><span>165. 党的领导是中国特色社会主义制度的最大优势</span>&#12290;<span>关于这个论断的理解包含以下方面</span></h3><div><span>A： 中国特色社会主义制度是党领导人民创建的</span>
+</div><div><span>B： 党的领导是充分发挥中国特色社会主义制度优势的根本保障</span>
+</div><div><span>C： 党的自身优势是中国特色社会主义制度优势的主要来源</span>
+</div><div><span>D： 党是领导一切的</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>中国特色社会主义制度是党领导人民创建的</span><br>
+<span>党的领导是充分发挥中国特色社会主义制度优势的根本保障</span><br>
+<span>党的自身优势是中国特色社会主义制度优势的主要来源</span><br></p><p></div><hr/><h3><span>166. 新时代中国共产党的历史使命是</span></h3><div><span>A： 统揽伟大斗争、伟大工程、伟大事业、伟大梦想</span>
+</div><div><span>B： 全面建成社会主义现代化强国</span>
+</div><div><span>C： 实现中华民族伟大复兴的中国梦</span>
+</div><div><span>D： 实现共产主义</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>统揽伟大斗争、伟大工程、伟大事业、伟大梦想</span><br>
+<span>全面建成社会主义现代化强国</span><br>
+<span>实现中华民族伟大复兴的中国梦</span><br></p><p></div><hr/><h3><span>167. 新时代党的历史使命之一是统揽四个伟大</span>&#12290;&#8220;<span>四个伟大</span>&#8221;<span>是指</span></h3><div><span>A： 伟大斗争</span>
+</div><div><span>B： 伟大工程</span>
+</div><div><span>C： 伟大事业</span>
+</div><div><span>D： 伟大成就</span>
+</div><div><span>E： 伟大梦想</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>伟大斗争</span><br>
+<span>伟大工程</span><br>
+<span>伟大事业</span><br>
+<span>伟大梦想</span><br></p><p></div><hr/><h3><span>168. 确保党始终总揽全局</span>&#12289;<span>协调各方，必须</span></h3><div><span>A： 必须增强四个意识，自觉维护党中央权威和集中统一领导</span>
+</div><div><span>B： 必须坚持和完善党的领导的体制机制</span>
+</div><div><span>C： 必须坚持党的民主集中制原则</span>
+</div><div><span>D： 必须自觉在思想上政治上行动上同党中央保持高度一致</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>必须增强四个意识，自觉维护党中央权威和集中统一领导</span><br>
+<span>必须坚持和完善党的领导的体制机制</span><br>
+<span>必须坚持党的民主集中制原则</span><br>
+<span>必须自觉在思想上政治上行动上同党中央保持高度一致</span><br></p><p></div><hr/><h3><span>169. 党要全面增强党的执政本领，这些本领包括</span></h3><div><span>A： 学习本领</span>
+</div><div><span>B： 政治领导本领</span>
+</div><div><span>C： 改革创新本领</span>
+</div><div><span>D： 科学发展本领</span>
+</div><div><span>E： 依法执政本领</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>学习本领</span><br>
+<span>政治领导本领</span><br>
+<span>改革创新本领</span><br>
+<span>科学发展本领</span><br>
+<span>依法执政本领</span><br></p><p></div><hr/><h3><span>170. 领导干部一定要讲学习</span>&#12289;<span>讲政治</span>&#12289;<span>讲正气，讲政治是（）</span></h3><div><span>A： 前提</span>
+</div><div><span>B： 核心</span>
+</div><div><span>C： 基础</span>
+</div><div><span>D： 保障</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            核心</span></p><p></div><hr/><h3><span>171. 社会主义初级阶段党的基本路线要管</span></h3><div><span>A： 50年</span>
+</div><div><span>B： 100年</span>
+</div><div><span>C： 150年</span>
+</div><div><span>D： 200年</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            100年</span></p><p></div><hr/><h3><span>172. 邓小平理论的精髓是</span></h3><div><span>A： 解放思想</span>
+</div><div><span>B： 与时俱进</span>
+</div><div><span>C： 实事求是、求真务实</span>
+</div><div><span>D： 解放思想、实事求是</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            解放思想、实事求是</span></p><p></div><hr/><h3><span>173. 我国资本主义工商业的社会主义改造，采取了从低级到高级的国家资本主义的过渡形式</span>&#12290;<span>其中第二步主要实行个别企业的公私合营，这些企业的性质是</span></h3><div><span>A： 仍然是资本主义性质的企业</span>
+</div><div><span>B： 是具有了社会主义因素的企业</span>
+</div><div><span>C： 是半社会主义性质的企业</span>
+</div><div><span>D： 是社会主义国营性质的企业</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            是半社会主义性质的企业</span></p><p></div><hr/><h3><span>174. 十六大政治报告强调加强和改进党的建设必须进一步解决(    )这两大历史性课题</span>&#12290;</h3><div><span>A： 坚持和健全民主集中制增强党的活力和团结统一</span>
+</div><div><span>B： 加强和改进党的作风建设深入开展反腐败斗争</span>
+</div><div><span>C： 保证党的线方针政策全面反映人民的根本利益和时代发展的要求</span>
+</div><div><span>D： 提高党的领导水平和执政水平、提高拒腐防变和抵御风险的能力</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            提高党的领导水平和执政水平、提高拒腐防变和抵御风险的能力</span></p><p></div><hr/><h3><span>175. （    ）是对经济社会发展一般规律认识的深化，是马克思主义关于发展的世界观和方法论的集中体现</span>&#12290;</h3><div><span>A： 毛泽东思想</span>
+</div><div><span>B： 邓小平理论</span>
+</div><div><span>C： “三个代表”重要思想</span>
+</div><div><span>D： 科学发展观</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            科学发展观</span></p><p></div><hr/><h3><span>176. 坚持党要管党</span>&#12289;<span>从严治党，治国必先（）</span></h3><div><span>A： 治吏</span>
+</div><div><span>B： 治政</span>
+</div><div><span>C： 治党</span>
+</div><div><span>D： 治人</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            治党</span></p><p></div><hr/><h3><span>177. 全面深化改革的总目标是（  ）</span></h3><div><span>A： 完善和发展中国特色社会主义制度，推进国家治理体系和治理能力现代化</span>
+</div><div><span>B： 积极创造社会财富，提高人民物质生活水平</span>
+</div><div><span>C： 提高综合国力，增强国际竞争力</span>
+</div><div><span>D： 加大改革开放的深度和广度，推进社会全面进步</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            完善和发展中国特色社会主义制度，推进国家治理体系和治理能力现代化</span></p><p></div><hr/><h3><span>178. 近代中国最主要的矛盾是（  ）</span></h3><div><span>A： 帝国主义和中华民族的矛盾</span>
+</div><div><span>B： 封建主义和人民大众的矛盾</span>
+</div><div><span>C： 官僚资本主义和人民大众的矛盾</span>
+</div><div><span>D： 帝国主义和官僚资本主义的矛盾</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            帝国主义和中华民族的矛盾</span></p><p></div><hr/><h3><span>179. 我国社会主义初级阶段最大的实际是指</span></h3><div><span>A： 生产力水平低且具有多层次、不平衡的特点</span>
+</div><div><span>B： 社会主义市场经济体制还不完善</span>
+</div><div><span>C： 我国已是社会主义社会</span>
+</div><div><span>D： 我国处于并将长期处于社会主义初级阶段</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            我国处于并将长期处于社会主义初级阶段</span></p><p></div><hr/><h3><span>180. 推动经济持续健康发展，必须坚持以（   ）为主题</span></h3><div><span>A： 共享发展</span>
+</div><div><span>B： 创新发展</span>
+</div><div><span>C： 科学发展</span>
+</div><div><span>D： 协调发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            科学发展</span></p><p></div><hr/><h3><span>181. 毛泽东在哪篇著作中把</span>&#8220;<span>和最广大的人群群众取得最密切的联系</span>&#8221;<span>作为中国共产党人区别于其他任何政党的三个显著标志之一</span></h3><div><span>A： 《关于领导方法的若干问题》</span>
+</div><div><span>B： 《论联合政府》</span>
+</div><div><span>C： 《〈共产党人〉发刊词》</span>
+</div><div><span>D： 《反对本本主义》</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            《论联合政府》</span></p><p></div><hr/><h3><span>182. 毛泽东在下列哪篇文章中提出了</span>&#8220;<span>没有调查，就没有发言权</span>&#8221;<span>的著名论断</span></h3><div><span>A： 《湖南农民运动考察报告》</span>
+</div><div><span>B： 《井冈山的斗争》</span>
+</div><div><span>C： 《反对本本主义》</span>
+</div><div><span>D： 《实践论》</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            《反对本本主义》</span></p><p></div><hr/><h3><span>183. 深刻认识党面临的</span><strong><span>__</span></strong><span>__的尖锐性和严峻性，坚持问题导向，保持战略定力，推动全面从严治党向纵深发展</span>&#12290;</h3><div><span>A： 精神懈怠危险、能力不足危险、脱离群众危险、消极腐败危险</span>
+</div><div><span>B： 精神懈怠危险、封闭僵化危险、脱离群众危险、消极腐败危险</span>
+</div><div><span>C： 精神懈怠危险、能力不足危险、官僚主义危险、消极腐败危险</span>
+</div><div><span>D： 精神懈怠危险、能力不足危险、脱离群众危险、腐化堕落危险</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            精神懈怠危险、能力不足危险、脱离群众危险、消极腐败危险</span></p><p></div><hr/><h3><span>184. 五年来，我们统筹推进</span>&#8220;<strong></strong>&#8221;<span>总体布局</span>&#12289;<span>协调推进</span>&#8220;<strong></strong>&#8221;<span>战略布局，</span>&#8220;<span>十二五</span>&#8221;<span>规划胜利完成，</span>&#8220;<span>十三五</span>&#8221;<span>规划顺利实施，党和国家事业全面开创新局面</span>&#12290;</h3><div><span>A： 五位一体，四个全面</span>
+</div><div><span>B： 四位一体，五个全面</span>
+</div><div><span>C： 五个全面，四位一体</span>
+</div><div><span>D： 四个全面，五位一体</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            五位一体，四个全面</span></p><p></div><hr/><h3><span>185. 建设社会主义政治文明，最根本的就是要坚持党的领导</span>&#12289;<span>人民当家作主和依法治国的有机统一，（）是根本保证</span>&#12290;</h3><div><span>A： 党的领导</span>
+</div><div><span>B： 人民当家做主</span>
+</div><div><span>C： 依法治国</span>
+</div><div><span>D： 依宪治国</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            党的领导</span></p><p></div><hr/><h3><span>186. 党的十八大提出，建设中国特色社会主义的总依据是</span></h3><div><span>A： 社会主义初级阶段</span>
+</div><div><span>B： 新世纪新阶段阶段性特征</span>
+</div><div><span>C：  新世纪时代特征</span>
+</div><div><span>D： 新阶段阶段性特征</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            社会主义初级阶段</span></p><p></div><hr/><h3><span>187. 这个新时代，是</span><strong></strong>&#12290;</h3><div><span>A： 承前启后、继往开来、在新的历史条件下继续夺取中国特色社会主义伟大胜利的时代</span>
+</div><div><span>B： 决胜全面建成小康社会、进而全面建设社会主义现代化强国的时代</span>
+</div><div><span>C： 全国各族人民团结奋斗、不断创造美好生活、逐步实现全体人民共同富裕的时代</span>
+</div><div><span>D： 全体中华儿女哿ν心、奋力实现中华民族伟大复兴中国梦的时代</span>
+</div><div><span>E： 我国日益走近世界舞台中央、不断为人类作出更大贡献的时代</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>承前启后、继往开来、在新的历史条件下继续夺取中国特色社会主义伟大胜利的时代</span><br>
+<span>决胜全面建成小康社会、进而全面建设社会主义现代化强国的时代</span><br>
+<span>全国各族人民团结奋斗、不断创造美好生活、逐步实现全体人民共同富裕的时代</span><br>
+<span>全体中华儿女哿ν心、奋力实现中华民族伟大复兴中国梦的时代</span><br>
+<span>我国日益走近世界舞台中央、不断为人类作出更大贡献的时代</span><br></p><p></div><hr/><h3><span>188. 按照</span>&#8220;<span>三个代表</span>&#8221;<span>的要求抓党的建设要解决的两大历史性课题是(    )</span></h3><div><span>A： 提高领导水平和执政水平</span>
+</div><div><span>B： 提高应对突发事件能力</span>
+</div><div><span>C： 增强党性和党的动员能力</span>
+</div><div><span>D： 增强拒腐防变和抵御风险能力</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>提高领导水平和执政水平</span><br>
+<span>增强拒腐防变和抵御风险能力</span><br></p><p></div><hr/><h3><span>189. 以下关于中国化了的马克思主义的基本内涵的表述中不正确的是：</span></h3><div><span>A： 中国化的马克思主义就是马克思主义与中国传统文化的结合</span>
+</div><div><span>B： 中国化的马克思主义就是被中国传统文化包装了的马克思主义</span>
+</div><div><span>C： 中国化的马克思主义就是坚持马克思主义基本原理与中国具体实际相结合</span>
+</div><div><span>D： 中国化的马克思主义就是毛泽东思想</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>中国化的马克思主义就是马克思主义与中国传统文化的结合</span><br>
+<span>中国化的马克思主义就是被中国传统文化包装了的马克思主义</span><br>
+<span>中国化的马克思主义就是毛泽东思想</span><br></p><p></div><hr/><h3><span>190. </span><p><span>（）深化供给侧结构性改革必须建设___劳动力大军。</span></p></h3><div><span>A： 知识型</span>
+</div><div><span>B： 技能型</span>
+</div><div><span>C： 创新型</span>
+</div><div><span>D： 智慧型</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>知识型</span><br>
+<span>技能型</span><br>
+<span>创新型</span><br></p><p></div><hr/><h3><span>191. </span><p><span>（）建设现代化经济体系的主要内容：__。</span></p></h3><div><span>A： 要建设创新引领、协同发展的产业体系；</span>
+</div><div><span>B： 要建设统一开放、竞争有序的市场体系；</span>
+</div><div><span>C： 要建设体现效率、促进公平的收入分配体系</span>
+</div><div><span>D： 要建设彰显优势、协调联动的城乡区域发展体系</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>要建设创新引领、协同发展的产业体系；</span><br>
+<span>要建设统一开放、竞争有序的市场体系；</span><br>
+<span>要建设体现效率、促进公平的收入分配体系</span><br>
+<span>要建设彰显优势、协调联动的城乡区域发展体系</span><br></p><p></div><hr/><h3><span>192. </span>&#8220;<span>三个代表</span>&#8221;<span>，是我们党的（）</span>&#12290;</h3><div><span>A： 立党之本</span>
+</div><div><span>B： 执政之基</span>
+</div><div><span>C： 力量之源</span>
+</div><div><span>D： 强国之路</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>立党之本</span><br>
+<span>执政之基</span><br>
+<span>力量之源</span><br></p><p></div><hr/><h3><span>193. 四马分肥中的</span>&#8220;<span>四马</span>&#8221;<span>具体是指</span></h3><div><span>A： 国家所得税</span>
+</div><div><span>B： 企业公积金</span>
+</div><div><span>C： 工人福利费</span>
+</div><div><span>D： 资方红利</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>国家所得税</span><br>
+<span>企业公积金</span><br>
+<span>工人福利费</span><br>
+<span>资方红利</span><br></p><p></div><hr/><h3><span>194. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想是我们党的立党之本</span>&#12289;<span>执政之基</span>&#12289;<span>力量之源</span>&#12290;<span>这里的</span>&#8220;<span>本</span>&#8221;&#12289;&#8216;&#8216;<span>基</span>&#8221;&#12289;&#8220;<span>源</span>&#8221;<span>说到底就是(    )</span></h3><div><span>A： 发展先进生产力</span>
+</div><div><span>B： 发展先进文化</span>
+</div><div><span>C： 人民群众的支持和拥护</span>
+</div><div><span>D： 人民群众生活水平的提高</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人民群众的支持和拥护</span></p><p></div><hr/><h3><span>195. 新民主主义革命的主要内容是（  ）</span></h3><div><span>A： 没收封建土地阶级的土地归农民所有</span>
+</div><div><span>B： 没收官僚资产阶级的垄断资本归新民主主义国家所有</span>
+</div><div><span>C： 保护民族工商业</span>
+</div><div><span>D： 推翻帝国主义统治</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            没收封建土地阶级的土地归农民所有</span></p><p></div><hr/><h3><span>196. 力争到二</span>&#12295;<span>三五年</span><strong></strong><span>国防和军队现代化，到本世纪中叶把人民军队</span><strong></strong><span>世界一流军队</span></h3><div><span>A： 全面实现 基本建成</span>
+</div><div><span>B： 全面实现 全面建成</span>
+</div><div><span>C： 基本实现 基本建成</span>
+</div><div><span>D： 基本实现 全面建成</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            基本实现 全面建成</span></p><p></div><hr/><h3><span>197. 科学发展观进一步走向成熟的标志是（   ）</span></h3><div><span>A： 十六大</span>
+</div><div><span>B： 十六届三中全会</span>
+</div><div><span>C： 十七大</span>
+</div><div><span>D： 十六届四中全会</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            十七大</span></p><p></div><hr/><h3><span>198. 在新民主主义社会的民族资产阶级仍然是个具有两面性的阶级</span>&#12290;<span>这种两面性是指</span></h3><div><span>A： 既有剥削工人的一面，又有拥护宪法、愿意接受社会主义改造的一面</span>
+</div><div><span>B： 既有走资本主义道路的一面，又有走社会主义道路的一面</span>
+</div><div><span>C： 既有剥削者与被剥削者的阶级利益相互对立的对抗性的一面，又有相互合作、具体相同利益的非对抗性的一面</span>
+</div><div><span>D： 作为一个剥削阶级的被消灭的对象，作为可以接受共产党和工人阶级领导的社会力量，又是团结和改造的对象</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            既有剥削工人的一面，又有拥护宪法、愿意接受社会主义改造的一面</span></p><p></div><hr/><h3><span>199. 中国革命的主力军是（  ）</span></h3><div><span>A： 无产阶级</span>
+</div><div><span>B： 农民</span>
+</div><div><span>C： 城市小资产阶级</span>
+</div><div><span>D： 民族资产阶级</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            农民</span></p><p></div><hr/><h3><span>200. 新民主主义革命理论是毛泽东思想的重要组成部分</span>&#12290;<span>下列关于新民主主义革命的认识，不正确的是（  ）</span>&#12290;</h3><div><span>A： 它是毛泽东思想初步形成的主要标志</span>
+</div><div><span>B： 它是具有独创性的关于中国人民革命的理论</span>
+</div><div><span>C： 它是马克思主义中国化的重要理论成果</span>
+</div><div><span>D： 它是反映中国新民主主义革命客观规律的完备理论</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            它是毛泽东思想初步形成的主要标志</span></p><p></div><hr/><h3><span>201. 时代的主题（）</span></h3><div><span>A： 霸权主义</span>
+</div><div><span>B： 和平与发展</span>
+</div><div><span>C： 强权政治</span>
+</div><div><span>D： 科学技术</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            和平与发展</span></p><p></div><hr/><h3><span>202. 社会主义民主政治的基本要求是(    )</span></h3><div><span>A： 依法治国</span>
+</div><div><span>B： 党的领导</span>
+</div><div><span>C： 人民当家作主</span>
+</div><div><span>D： 调动人民的积极性</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            依法治国</span></p><p></div><hr/><h3><span>203. 1956年4月和5月，毛泽东在</span>&#12298;<span>论十大关系</span>&#12299;<span>的报告中初步总结了我国社会主义建设的经验，明确提出了</span></h3><div><span>A： 党在过渡时期的总路线</span>
+</div><div><span>B： 以苏为鉴，独立自主地探索适合中国情况的社会主义建设道路</span>
+</div><div><span>C： 建设有中国特色社会主义</span>
+</div><div><span>D： 多快好省地建设社会主义</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            以苏为鉴，独立自主地探索适合中国情况的社会主义建设道路</span></p><p></div><hr/><h3><span>204. 新民主主义革命的首要对象是（  ）</span></h3><div><span>A： 帝国主义</span>
+</div><div><span>B： 封建主义</span>
+</div><div><span>C： 官僚资本主义</span>
+</div><div><span>D： 民族资本主义</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            帝国主义</span></p><p></div><hr/><h3><span>205. 适应世界新军事革命发展趋势和国家安全需求，提高建设质量和效益，确保到二</span>&#12295;<span>二</span>&#12295;<span>年基本实现</span><strong></strong><span>，</span><strong></strong><span>建设取得重大进展，</span><strong></strong><span>有大的提升</span>&#12290;</h3><div><span>A： 现代化，信息化，战斗能力</span>
+</div><div><span>B： 机械化，信息化，战斗能力</span>
+</div><div><span>C： 机械化，信息化，战略能力</span>
+</div><div><span>D： 现代化，信息化，战略能力</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            机械化，信息化，战略能力</span></p><p></div><hr/><h3><span>206. 走中国工业化道路的思想是党在社会主义建设道路初步探索中国取得的理论成果之一</span>&#12290;<span>毛泽东在</span>&#12298;<span>论十大关系</span>&#12299;<span>中论述的第一大关系，即重工业</span>&#12289;<span>轻工业和农业的关系</span>&#12290;<span>在</span>&#12298;<span>关于正确处理人民内部矛盾的问题</span>&#12299;<span>一文中，毛泽东又明确提出要走一条中国工业化道路</span>&#12290;<span>毛泽东所说的中国工业化道路，是有别于</span></h3><div><span>A： 美国的工业化道路</span>
+</div><div><span>B： 欧洲和日本的工业化道路</span>
+</div><div><span>C： 苏联的工业化道路</span>
+</div><div><span>D： 旧中国的工业化道路</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            苏联的工业化道路</span></p><p></div><hr/><h3><span>207. </span><strong><span>_</span></strong><span>和</span><strong><span>_</span></strong><span>，是中国共产党人的精神支柱和政治灵魂，也是保持党的团结统一的思想基础</span>&#12290;</h3><div><span>A： 共产主义远大理想新时代中国特色社会主义共同理想</span>
+</div><div><span>B： 共产主义远大理想中国特色社会主义共同理想</span>
+</div><div><span>C： 共产主义崇高理想新时代中国特色社会主义共同理想</span>
+</div><div><span>D： 共产主义崇高理想中国特色社会主义共同理想</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            共产主义远大理想中国特色社会主义共同理想</span></p><p></div><hr/><h3><span>208. 建国初期，我国社会主义国营经济建立的最主要的途径和手段是</span></h3><div><span>A： 没收帝国主义在华企业</span>
+</div><div><span>B： 没收官僚资本</span>
+</div><div><span>C： 没收民族资本</span>
+</div><div><span>D： 没收地主阶级的土地和财产</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            没收官僚资本</span></p><p></div><hr/><h3><span>209. 中国特色社会主义理论体系的开篇之作是</span></h3><div><span>A： 毛泽东思想</span>
+</div><div><span>B： 邓小平理论</span>
+</div><div><span>C： “三个代表”重要思想</span>
+</div><div><span>D： 科学发展观</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            邓小平理论</span></p><p></div><hr/><h3><span>210. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想是在实践中不断深化认识规律</span>&#12289;<span>丰富和发展马克思主义的新成果</span>&#12290;<span>这一思想深化认识的规律主要是(    )</span></h3><div><span>A： 共产党执政的规律</span>
+</div><div><span>B： 社会主义建设的规律</span>
+</div><div><span>C： 人类社会发展的规律</span>
+</div><div><span>D： 改革开放的规律</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>共产党执政的规律</span><br>
+<span>社会主义建设的规律</span><br>
+<span>人类社会发展的规律</span><br></p><p></div><hr/><h3><span>211. 科学发展观最鲜明的精神实质是（  ）</span></h3><div><span>A： 解放思想</span>
+</div><div><span>B： 实事求是</span>
+</div><div><span>C： 与时俱进</span>
+</div><div><span>D： 求真务实</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>解放思想</span><br>
+<span>实事求是</span><br>
+<span>与时俱进</span><br>
+<span>求真务实</span><br></p><p></div><hr/><h3><span>212. 科学立法</span>&#12289;<span>严格执法</span>&#12289;<span>公正司法</span>&#12289;<span>全民守法深入推进，</span><strong></strong>&#12289;<strong></strong>&#12289;<strong></strong><span>建设相互促进，中国特色社会主义法治体系日益完善，全社会法治观念明显增强</span>&#12290;</h3><div><span>A： 法治生活</span>
+</div><div><span>B： 法治国家</span>
+</div><div><span>C： 法治政府</span>
+</div><div><span>D： 法治社会</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>法治国家</span><br>
+<span>法治政府</span><br>
+<span>法治社会</span><br></p><p></div><hr/><h3><span>213. 以毛泽东为核心的第一代中央领导集体在创建新中国和探索适合中国情况的社会主义建设道路过程中，形成了一系列重要的理论</span>&#12290;<span>主要有</span></h3><div><span>A： 在社会主义经济建设方面，实行以农业为基础、以工业为主导的方针，以农、轻、重为序发展国民经济</span>
+</div><div><span>B： 社会主义可以分为不发达的社会主义和比较发达的社会主义两个阶段，后一个阶段可能比前一阶段需要更长的时间</span>
+</div><div><span>C： 应当采取“两步走”的发展战略，把中国建设成为一个具有现代农业、现代工业、现代国防和现代科学技术的强国</span>
+</div><div><span>D： 发展面向现代化、面向世界、面向未来的，民族的科学的大众的社会主义文化</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>在社会主义经济建设方面，实行以农业为基础、以工业为主导的方针，以农、轻、重为序发展国民经济</span><br>
+<span>社会主义可以分为不发达的社会主义和比较发达的社会主义两个阶段，后一个阶段可能比前一阶段需要更长的时间</span><br>
+<span>应当采取“两步走”的发展战略，把中国建设成为一个具有现代农业、现代工业、现代国防和现代科学技术的强国</span><br></p><p></div><hr/><h3><span>214. 习近平总书记在同中央党校第一期县委书记研修班学员进行座谈时强调，做县委书记就要做焦裕禄的县委书记，始终做到</span></h3><div><span>A： 心中有党</span>
+</div><div><span>B： 心中有民</span>
+</div><div><span>C： 心中有责</span>
+</div><div><span>D： 心中有戒</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>心中有党</span><br>
+<span>心中有民</span><br>
+<span>心中有责</span><br>
+<span>心中有戒</span><br></p><p></div><hr/><h3><span>215. 推动我国先进生产力发展和社会全面进步的根本力量是（）</span></h3><div><span>A： 工人</span>
+</div><div><span>B： 工人、农民、知识分子</span>
+</div><div><span>C： 知识分子</span>
+</div><div><span>D： 工人和农民</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            工人、农民、知识分子</span></p><p></div><hr/><h3><span>216. 科学发展观的基本要求是（  ）</span></h3><div><span>A： 发展</span>
+</div><div><span>B： 全面协调可持续</span>
+</div><div><span>C： 以人为本</span>
+</div><div><span>D： 统筹兼顾</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            以人为本</span></p><p></div><hr/><h3><span>217. 坚持科学发展，必须加快转变经济发展方式，要坚持把（    ）作为根本出发点和落脚点</span>&#12290;</h3><div><span>A： 经济结构战略性调整</span>
+</div><div><span>B： 科技进步和创新</span>
+</div><div><span>C： 保障和改善民生</span>
+</div><div><span>D： 建设资源节约型、环境友好型社会</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            保障和改善民生</span></p><p></div><hr/><h3><span>218. 我国社会主义建设的根本保障是</span></h3><div><span>A： 坚持社会主义道路</span>
+</div><div><span>B： 坚持四项基本原则</span>
+</div><div><span>C： 坚持改革开放</span>
+</div><div><span>D： 坚持党的领导</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            坚持四项基本原则</span></p><p></div><hr/><h3><span>219. </span><strong><span>__</span></strong><strong><span>__</span></strong><span>__是人民军队战无不胜的根本保证</span></h3><div><span>A： 武器</span>
+</div><div><span>B： 科技</span>
+</div><div><span>C： 党的领导</span>
+</div><div><span>D： 制度</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            党的领导</span></p><p></div><hr/><h3><span>220. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想把发展先进生产力</span>&#12289;<span>发展先进文化和实现最广大人民的根本利益统一起来，始终代表中国先进生产力的发展要求，体现了（）</span></h3><div><span>A： 发展社会主义经济、建设社会主义物质文明的理想和价值目标</span>
+</div><div><span>B： 发展社会主义文化、建设社会主义精神文明的理想和价值目标</span>
+</div><div><span>C： 我们党的宗旨和我们国家的性质</span>
+</div><div><span>D： 社会主义制度不断完善和发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            发展社会主义经济、建设社会主义物质文明的理想和价值目标</span></p><p></div><hr/><h3><span>221. 建国初年我国用（   ）的方法改造资本主义工商业</span>&#12290;</h3><div><span>A： 四马分肥</span>
+</div><div><span>B： 暴力剥夺</span>
+</div><div><span>C： 和平赎买</span>
+</div><div><span>D： 加工订货</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            和平赎买</span></p><p></div><hr/><h3><span>222. 中国梦是</span></h3><div><span>A： 实现四个现代化</span>
+</div><div><span>B： 成为社会主义强国</span>
+</div><div><span>C： 国家富强、民族振兴、人民幸福</span>
+</div><div><span>D： 实现共产主义</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            国家富强、民族振兴、人民幸福</span></p><p></div><hr/><h3><span>223. 邓小平理论形成的时代主题是</span></h3><div><span>A： 战争与和平</span>
+</div><div><span>B： 和平与发展</span>
+</div><div><span>C： 战争与革命</span>
+</div><div><span>D： 改革与发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            和平与发展</span></p><p></div><hr/><h3><span>224. 建设中国特色社会主义首要的基本的理论问题是</span></h3><div><span>A： 什么是市场经济，怎样建设社会主义市场经济体制</span>
+</div><div><span>B： 什么是社会主义的主要矛盾，怎么解决这一矛盾</span>
+</div><div><span>C： 什么是社会主义，怎样建设社会主义</span>
+</div><div><span>D： 什么是马克思主义，怎样坚持马克思主义</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            什么是社会主义，怎样建设社会主义</span></p><p></div><hr/><h3><span>225. 社会主义初级阶段科学论断的涵义是</span></h3><div><span>A： 我国已经进入社会主义</span>
+</div><div><span>B： 我国已经建成社会主义</span>
+</div><div><span>C： 我国的社会主义还处于不发达的阶段</span>
+</div><div><span>D： 我国建设社会主义必然经历的特定的历史阶段</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>我国已经进入社会主义</span><br>
+<span>我国的社会主义还处于不发达的阶段</span><br>
+<span>我国建设社会主义必然经历的特定的历史阶段</span><br></p><p></div><hr/><h3><span>226. 新时代坚持和发展中国特色社会主义的基本方略是</span><strong></strong>&#12290;</h3><div><span>A： 坚持党对一切工作的领导，坚持以人民为中心，坚持全面深化改革</span>
+</div><div><span>B： 坚持新发展理念，坚持人民当家作主，坚持全面依法治国</span>
+</div><div><span>C： 坚持社会主义核心价值体系，坚持在发展中保障和改善民生，坚持人与自然和谐共生</span>
+</div><div><span>D： 坚持总体国家安全观，坚持党对人民军队的绝对领导，坚持“一国两制”和推进祖国统一</span>
+</div><div><span>E： 坚持推动构建人类命运共同体，坚持全面从严治党</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>坚持党对一切工作的领导，坚持以人民为中心，坚持全面深化改革</span><br>
+<span>坚持新发展理念，坚持人民当家作主，坚持全面依法治国</span><br>
+<span>坚持社会主义核心价值体系，坚持在发展中保障和改善民生，坚持人与自然和谐共生</span><br>
+<span>坚持总体国家安全观，坚持党对人民军队的绝对领导，坚持“一国两制”和推进祖国统一</span><br>
+<span>坚持推动构建人类命运共同体，坚持全面从严治党</span><br></p><p></div><hr/><h3><span>227. 构建社会主义核心社会的总要求是（  ）</span></h3><div><span>A： 民主法治</span>
+</div><div><span>B： 公平正义</span>
+</div><div><span>C： 诚信友爱</span>
+</div><div><span>D： 充满活力</span>
+</div><div><span>E： 安定有序</span>
+</div><div><span>F： 人与自然和谐相处</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>民主法治</span><br>
+<span>公平正义</span><br>
+<span>诚信友爱</span><br>
+<span>充满活力</span><br>
+<span>安定有序</span><br>
+<span>人与自然和谐相处</span><br></p><p></div><hr/><h3><span>228. 习近平总书记在七一讲话中指出，95年来，中国共产党之所以能够完成近代以来各种政治力量不可能完成的艰巨任务，就在于</span></h3><div><span>A： 就在于始终把马克思主义这一科学理论作为自己的行动指南</span>
+</div><div><span>B： 并坚持在实践中不断丰富和发展马克思主义</span>
+</div><div><span>C： 始终保持党的先进性和纯洁性</span>
+</div><div><span>D： 始终重视党的建设</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>就在于始终把马克思主义这一科学理论作为自己的行动指南</span><br>
+<span>并坚持在实践中不断丰富和发展马克思主义</span><br></p><p></div><hr/><h3><span>229. 与新民主主义时期三种主要的经济成分相联系，新民主主义社会的阶级构成主要表现为三种基本的阶级力量，它们是</span></h3><div><span>A： 工人阶级</span>
+</div><div><span>B： 大资产阶级</span>
+</div><div><span>C： 农民阶级和其他小资产阶级</span>
+</div><div><span>D： 民族资产阶级</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>工人阶级</span><br>
+<span>农民阶级和其他小资产阶级</span><br>
+<span>民族资产阶级</span><br></p><p></div><hr/><h3><span>230. 1956年4月和5月，毛泽东先后在中央政治局扩大会议和最高国际会议上，作出了</span>&#12298;<span>论十大关系</span>&#12299;<span>的报告，这是党探索中国社会主义建设道路的良好开端</span>&#12290;&#12298;<span>论十大关系</span>&#12299;<span>提出</span></h3><div><span>A： 以苏为鉴，独立自主地探索适合中国情况的社会主义建设道路</span>
+</div><div><span>B： 调动一切积极因素为社会主义事业服务</span>
+</div><div><span>C： 探索在中国实行改革开放的道理</span>
+</div><div><span>D： 进行马克思主义同中国实际的“第二次结合”</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>以苏为鉴，独立自主地探索适合中国情况的社会主义建设道路</span><br>
+<span>调动一切积极因素为社会主义事业服务</span><br>
+<span>进行马克思主义同中国实际的“第二次结合”</span><br></p><p></div><hr/><h3><span>231. 1957年2月，毛泽东在扩大的最高国务会议上发表</span>&#12298;<span>关于正确处理人民内部矛盾的问题</span>&#12299;<span>的讲话，提出了一些列正确处理人民内部矛盾的方针</span>&#12289;<span>原则，主要有</span></h3><div><span>A： 统筹兼顾、适当安排</span>
+</div><div><span>B： 有理、有利、有节</span>
+</div><div><span>C： 百花齐放、百家争鸣</span>
+</div><div><span>D： 长期共存、互相监督</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>统筹兼顾、适当安排</span><br>
+<span>百花齐放、百家争鸣</span><br>
+<span>长期共存、互相监督</span><br></p><p></div><hr/><h3><span>232. 新民主主义社会是</span></h3><div><span>A： 独立的社会形态</span>
+</div><div><span>B： 社会主义社会</span>
+</div><div><span>C： 半殖民地半封建社会</span>
+</div><div><span>D： 过渡性的社会形态</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            过渡性的社会形态</span></p><p></div><hr/><h3><span>233. 下列哪项不是毛泽东思想的主要内容？</span></h3><div><span>A： 社会主义市场经济理论</span>
+</div><div><span>B： 新民主主义革命理论</span>
+</div><div><span>C： 社会主义革命和建设的理论</span>
+</div><div><span>D： 政策和策略的理论</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            社会主义市场经济理论</span></p><p></div><hr/><h3><span>234. 中国共产党的根本宗旨和一切工作的根本出发点是</span></h3><div><span>A： 一切为了群众，全心全意为人民服务</span>
+</div><div><span>B： 实事求是</span>
+</div><div><span>C： 批评与自我批评</span>
+</div><div><span>D： 理论联系实际</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            一切为了群众，全心全意为人民服务</span></p><p></div><hr/><h3><span>235. 在农业合作化进程中，具有半社会主义性质的组织形式是</span></h3><div><span>A： 临时互助组</span>
+</div><div><span>B： 常年互助组</span>
+</div><div><span>C： 初级合作社</span>
+</div><div><span>D： 高级合作社</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            初级合作社</span></p><p></div><hr/><h3><span>236. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想是在 ( )</span></h3><div><span>A： 科学判断党的历史方位和总结历史经验的基础上提出来的</span>
+</div><div><span>B： 发展社会主义经济条件下提出来的</span>
+</div><div><span>C： 中国共产党成为执政党的条件下提出来的</span>
+</div><div><span>D： 是在开始全面建设小康社会的形势下提出来的</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            科学判断党的历史方位和总结历史经验的基础上提出来的</span></p><p></div><hr/><h3><span>237. 中国社会主义改革开放和现代化建设的总设计师是</span></h3><div><span>A： 邓小平</span>
+</div><div><span>B： 江泽民</span>
+</div><div><span>C： 胡锦涛</span>
+</div><div><span>D： 习近平</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            邓小平</span></p><p></div><hr/><h3><span>238. 1992年春邓小平在南方讲话中提出了</span></h3><div><span>A： 实践标准</span>
+</div><div><span>B： 生产力标准</span>
+</div><div><span>C： 人民利益标准</span>
+</div><div><span>D： 三个有利于标准</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            三个有利于标准</span></p><p></div><hr/><h3><span>239. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想把发展先进生产力</span>&#12289;<span>发展先进文化和实现最广大人民的根本利益统一起来，始终代表中国先进文化的前进方向，体现了（）</span></h3><div><span>A： 发展社会主义经济、建设社会主义物质文明的理想和价值目标</span>
+</div><div><span>B： 发展社会主义文化、建设社会主义精神文明的理想和价值目标</span>
+</div><div><span>C： 我们党的宗旨和我们国家的性质</span>
+</div><div><span>D： 社会主义制度不断完善和发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            发展社会主义文化、建设社会主义精神文明的理想和价值目标</span></p><p></div><hr/><h3><span>240. 党的十三大提出我国要建成的社会主义现代化国家是</span></h3><div><span>A： 富强</span>
+</div><div><span>B： 民主</span>
+</div><div><span>C： 文明</span>
+</div><div><span>D： 和谐</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>富强</span><br>
+<span>民主</span><br>
+<span>文明</span><br></p><p></div><hr/><h3><span>241. 陆军主要担负陆地作战任务，要着力提高精确作战</span>&#12289;<strong><span>__</span></strong><strong><em>&#12289;</em></strong><strong></strong>&#12289;<strong><span>__</span></strong><span>__持续作战能力，加快实现区域防卫型向全域作战型转变</span>&#12290;</h3><div><span>A： 立体作战</span>
+</div><div><span>B： 协同作战</span>
+</div><div><span>C： 全域作战</span>
+</div><div><span>D： 多能作战</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>立体作战</span><br>
+<span>全域作战</span><br>
+<span>多能作战</span><br></p><p></div><hr/><h3><span>242. 习近平强军思想深刻回答了</span><strong><span>__</span></strong><strong><span>__</span></strong><span>_</span>&#12289;<strong><span>__</span></strong><strong><span>__</span></strong><strong><span>_</span></strong><span> 的时代课题</span></h3><div><span>A： 新时代建设一支什么样的强大人民军队</span>
+</div><div><span>B： 新时代为什么建设一支强大的人民军队</span>
+</div><div><span>C： 新时代怎样建设一支强大的人民军队</span>
+</div><div><span>D： 新时代如何建设一支强大的人民军队</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>新时代建设一支什么样的强大人民军队</span><br>
+<span>新时代怎样建设一支强大的人民军队</span><br></p><p></div><hr/><h3><span>243. 判断改革和各方面工作的是非得失的主要标准是</span></h3><div><span>A： 是否有利于发展社会主义市场经济</span>
+</div><div><span>B： 是否有利于发展社会主义社会的生产力</span>
+</div><div><span>C： 是否有利于提高人民的生活水平</span>
+</div><div><span>D： 是否有利于增强社会主义国家的综合实力</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>是否有利于发展社会主义社会的生产力</span><br>
+<span>是否有利于提高人民的生活水平</span><br>
+<span>是否有利于增强社会主义国家的综合实力</span><br></p><p></div><hr/><h3><span>244. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想是毛泽东思想</span>&#12289;<span>邓小平理论一脉相承的理论体系，这是因为它们( )</span>&#12290;</h3><div><span>A： 都是以马克思列宁主义为理论基础和思想来源</span>
+</div><div><span>B： 都具有与时俱进的理论品格</span>
+</div><div><span>C： 都以实现社会主义为目标、以解决中华民族的复兴为主题</span>
+</div><div><span>D： 有着共同的逻辑起点、共同的科学精神和共同的价值取向</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>都是以马克思列宁主义为理论基础和思想来源</span><br>
+<span>都以实现社会主义为目标、以解决中华民族的复兴为主题</span><br>
+<span>有着共同的逻辑起点、共同的科学精神和共同的价值取向</span><br></p><p></div><hr/><h3><span>245. 军队是要准备打仗的，一切工作都必须坚持</span><strong></strong><span>标准，向能打仗</span>&#12289;<span>打胜仗聚焦</span></h3><div><span>A： 战斗力</span>
+</div><div><span>B： 斗争力</span>
+</div><div><span>C： 战争力</span>
+</div><div><span>D： 硬实力</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            战斗力</span></p><p></div><hr/><h3><span>246. 江泽民强调，我们想事情，做工作，想得对不对，做得好不好，根本的衡量尺度，就是（）</span></h3><div><span>A： 人民拥护不拥护</span>
+</div><div><span>B： 人民赞成不赞成，人民高兴不高兴</span>
+</div><div><span>C： 人民拥护不拥护，人民赞成不赞成，人民高兴不高兴，人民答应不答应</span>
+</div><div><span>D： 人民高兴不高兴，人民答应不答应</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人民拥护不拥护，人民赞成不赞成，人民高兴不高兴，人民答应不答应</span></p><p></div><hr/><h3><span>247. 建设社会主义政治文明，最根本的就是要坚持党的领导</span>&#12289;<span>人民当家作主和依法治国的有机统一，党领导人民治理国家的基本方略是（）</span></h3><div><span>A： 党的领导</span>
+</div><div><span>B： 人民当家做主</span>
+</div><div><span>C： 依法治国</span>
+</div><div><span>D： 依宪治国</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            依法治国</span></p><p></div><hr/><h3><span>248. 人民群众的整体利益总是由各方面的具体利益构成的，其中最紧要和最具有决定性的因素是（）</span></h3><div><span>A： 工人阶级和广大知识分子的利益</span>
+</div><div><span>B： 工人阶级的利益</span>
+</div><div><span>C： 最大多数人的利益</span>
+</div><div><span>D： 农民阶级的利益</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            最大多数人的利益</span></p><p></div><hr/><h3><span>249. 中国资产阶级民主革命进入新民主主义革命的崭新阶段的标志是(  )</span></h3><div><span>A： 十月革命</span>
+</div><div><span>B： 五四运动</span>
+</div><div><span>C： 新文化运动</span>
+</div><div><span>D： 辛亥革命</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            五四运动</span></p><p></div><hr/><h3><span>250. 发展生产力的决定性因素是（）</span></h3><div><span>A： 科技进步和创新</span>
+</div><div><span>B： 科学技术</span>
+</div><div><span>C： 创新</span>
+</div><div><span>D： 教育</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            科技进步和创新</span></p><p></div><hr/><h3><span>251. 毛泽东认为对于人民内部矛盾的正确处理方法是（   ）</span></h3><div><span>A： 说服</span>
+</div><div><span>B： 专政</span>
+</div><div><span>C： 镇压</span>
+</div><div><span>D： 整风</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            说服</span></p><p></div><hr/><h3><span>252. 邓小平理论的主题是</span></h3><div><span>A： 什么是社会主义、怎样建设社会主义</span>
+</div><div><span>B： 建设一个什么样的党、怎样建设党</span>
+</div><div><span>C： 实现什么样的发展、怎样发展</span>
+</div><div><span>D： 什么是马克思主义、怎样发展马克思主义</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            什么是社会主义、怎样建设社会主义</span></p><p></div><hr/><h3><span>253. 新时代中国特色社会主义思想，明确中国特色社会主义最本质的特征是</span><strong></strong>&#12290;</h3><div><span>A： “五位一体”总体布局</span>
+</div><div><span>B： 建设中国特色社会主义法治体系</span>
+</div><div><span>C： 人民利益为根本出发点</span>
+</div><div><span>D： 中国共产党领导</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            中国共产党领导</span></p><p></div><hr/><h3><span>254. 20世纪50年代60年代初，在对中国社会主义建设道路的初步探索中，提出</span>&#8220;<span>两参一改三结合</span>&#8221;<span>的领导人是</span></h3><div><span>A： 毛泽东</span>
+</div><div><span>B： 周恩来</span>
+</div><div><span>C： 刘少奇</span>
+</div><div><span>D： 陈云</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            毛泽东</span></p><p></div><hr/><h3><span>255. 加快完善社会主义市场经济体制</span>&#12290;<span>经济体制改革必须以</span><strong><span>__</span></strong><strong><span>和_</span></strong><strong><span>_</span></strong><span>为重点，实现产权有效激励</span>&#12289;<span>要素自由流动</span>&#12289;<span>价格反应灵活</span>&#12289;<span>竞争公平有序</span>&#12289;<span>企业优胜劣汰</span>&#12290;</h3><div><span>A： 完善产权制度要素市场化配置</span>
+</div><div><span>B： 要素市场化配置建立现代财政制度</span>
+</div><div><span>C： 建立现代财政制度创新和完善宏观调控</span>
+</div><div><span>D： 完善产权制度创新和完善宏观调控</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            完善产权制度要素市场化配置</span></p><p></div><hr/><h3><span>256. 科学发展观强调，（    ）是加快转变经济发展方式的关键</span></h3><div><span>A： 实施创新驱动发展战略</span>
+</div><div><span>B： 全面深化经济体制改革</span>
+</div><div><span>C： 推动经济结构战略性调整</span>
+</div><div><span>D： 促进区域协调发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            全面深化经济体制改革</span></p><p></div><hr/><h3><span>257. </span>&#8220;<span>三个代表</span>&#8221;<span>这一科学理论在建设中国特色社会主义的思想线</span>&#12289;<span>发展道</span>&#12289;<span>发展阶段和发展战略</span>&#12289;<span>根本任务</span>&#12289;<span>发展动力</span>&#12289;<span>依靠力量</span>&#12289;<span>国际战略</span>&#12289;<span>领导力量和根本目的等重大问题上取得了丰硕成果用一系列紧密联系</span>&#12289;<span>相互贯通的新思想</span>&#12289;<span>新观点</span>&#12289;<span>新论断创造性地回答了(    )</span></h3><div><span>A： 什么是社会主义、怎样建设社会主义</span>
+</div><div><span>B： 什么是初级阶段的社会主义、怎样建设初级阶段的社会主义</span>
+</div><div><span>C： 建设一个什么样的党、怎样建设党</span>
+</div><div><span>D： 怎样解放思想、实事求是、与时俱进</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            建设一个什么样的党、怎样建设党</span></p><p></div><hr/><h3><span>258. 党对资本主义工商业的社会主义改造采用的方法是</span></h3><div><span>A： 没收其资本</span>
+</div><div><span>B： 和平赎买</span>
+</div><div><span>C： 五五分账</span>
+</div><div><span>D： 市场化改革</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            和平赎买</span></p><p></div><hr/><h3><span>259. 十八届四中全会通过的</span>&#12298;<span>中共中央关于全面推进依法治国若干重大问题的决定</span>&#12299;<span>中关于中国特色社会主义法治体系提出六大体系的说法正确的有()</span>&#12290;</h3><div><span>A： 完备的法律规范体系</span>
+</div><div><span>B： 高效的法治实施体系</span>
+</div><div><span>C： 有力的法治保障体系</span>
+</div><div><span>D： 完善的党内法规体系</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>完备的法律规范体系</span><br>
+<span>高效的法治实施体系</span><br>
+<span>有力的法治保障体系</span><br>
+<span>完善的党内法规体系</span><br></p><p></div><hr/><h3><span>260. 科学发展观同邓小平理论</span>&#12289;&#8220;<span>三个代表</span>&#8221;<span>重要思想的共同点是（  ）</span></h3><div><span>A： 共同的时代课题</span>
+</div><div><span>B： 共同的历史任务</span>
+</div><div><span>C： 贯彻了中国特色社会主义的主题</span>
+</div><div><span>D： 坚持辩证唯物主义和历史唯物主义的世界观方法论</span>
+</div><div><span>E： 坚持党的最高纲领和最低纲领的统一</span>
+</div><div><span>F： 坚持代表最广大人民根本利益</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>共同的时代课题</span><br>
+<span>共同的历史任务</span><br>
+<span>贯彻了中国特色社会主义的主题</span><br>
+<span>坚持辩证唯物主义和历史唯物主义的世界观方法论</span><br>
+<span>坚持党的最高纲领和最低纲领的统一</span><br>
+<span>坚持代表最广大人民根本利益</span><br></p><p></div><hr/><h3><span>261. 党的八大正确分析了社会主义改造完成后我国社会主要矛盾的变化，指出社会主义制度在我国已经基本上建立起来了</span>&#12290;<span>我们国内的主要矛盾，已经是</span></h3><div><span>A： 人民日益增长的物质文化需要同落后的社会生产之间的矛盾</span>
+</div><div><span>B： 人民对于建立先进的工业国的要求同落后的农业国的现实之间的矛盾</span>
+</div><div><span>C： 人民对于经济文化迅速发展的需要同当前经济文化不能满足人民需要的状况之间的矛盾</span>
+</div><div><span>D： 无产阶级和资产阶级的矛盾</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>人民对于建立先进的工业国的要求同落后的农业国的现实之间的矛盾</span><br>
+<span>人民对于经济文化迅速发展的需要同当前经济文化不能满足人民需要的状况之间的矛盾</span><br></p><p></div><hr/><h3><span>262. 根据</span>&#12298;<span>中共中央关于全面推进依法治国若干重大问题的决定</span>&#12299;<span>的规定，完善社会主义市场经济法律制度应从哪些方面着手?()</span></h3><div><span>A： 加强市场法律制度建设</span>
+</div><div><span>B： 健全以公平为核心原则的产权保护制度</span>
+</div><div><span>C： 加强企业社会责任立法</span>
+</div><div><span>D： 完善激励创新的产权制度、知识产权保护制度</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>加强市场法律制度建设</span><br>
+<span>健全以公平为核心原则的产权保护制度</span><br>
+<span>加强企业社会责任立法</span><br>
+<span>完善激励创新的产权制度、知识产权保护制度</span><br></p><p></div><hr/><h3><span>263. 新民主主义革命的对象是（  ）</span></h3><div><span>A： 帝国主义</span>
+</div><div><span>B： 封建主义</span>
+</div><div><span>C： 官僚资本主义</span>
+</div><div><span>D： 民族资本主义</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>帝国主义</span><br>
+<span>封建主义</span><br>
+<span>官僚资本主义</span><br></p><p></div><hr/><h3><span>264. 党在社会主义初级阶段基本路线的核心是</span></h3><div><span>A： 以经济建设为中心，坚持四项基本原则、坚持改革开放</span>
+</div><div><span>B： 坚持基本原则，坚持改革开放</span>
+</div><div><span>C： 自力更生、艰苦创业</span>
+</div><div><span>D： 把我国建设成为富强、民主、文明、和谐、美丽的社会主义国家</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            以经济建设为中心，坚持四项基本原则、坚持改革开放</span></p><p></div><hr/><h3><span>265. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想关键在（）</span></h3><div><span>A： 坚持执政为民</span>
+</div><div><span>B： 保持党的先进性</span>
+</div><div><span>C： 坚持与时俱进</span>
+</div><div><span>D： 实事求是</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            坚持与时俱进</span></p><p></div><hr/><h3><span>266. 20世纪50年代中期，毛泽东明确提出要走一条有别于苏联的中国工业化道路</span>&#12290;<span>走中国工业化道路主要是强调要正确处理</span></h3><div><span>A： 信息化和工业化的关系</span>
+</div><div><span>B： 工业化和农业现代化的关系</span>
+</div><div><span>C： 农业现代化和城镇化的关系</span>
+</div><div><span>D： 重工业和轻工业、农业的关系</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            重工业和轻工业、农业的关系</span></p><p></div><hr/><h3><span>267. 建国以来我们在社会主义建设中所经历的曲折和失误归根结底在于没有完全搞清楚</span></h3><div><span>A： 阶级斗争和经济建设的关系</span>
+</div><div><span>B： 解放生产力和发展生产力的关系</span>
+</div><div><span>C： 什么是社会主义、怎样建设社会主义</span>
+</div><div><span>D： 计划与市场的关系</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            什么是社会主义、怎样建设社会主义</span></p><p></div><hr/><h3><span>268. </span>&#12298;<span>论十大关系</span>&#12299;<span>是以毛泽东为主要代表的中国共产党人开始探索中国自己的社会主义建设道路的标志</span>&#12290;<span>毛泽东</span>&#12298;<span>论十大关系</span>&#12299;<span>中提出的中国社会主义建设的基本方针是</span></h3><div><span>A： 不要四面出击</span>
+</div><div><span>B： 积极引导，稳步前进</span>
+</div><div><span>C： 调动一切积极因素为社会主义事业服务</span>
+</div><div><span>D： 实现工业、农业、国防和科学技术的现代化</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            调动一切积极因素为社会主义事业服务</span></p><p></div><hr/><h3><span>269. 中国革命中无产阶级最可靠的同盟军是（  ）</span></h3><div><span>A： 贫雇农</span>
+</div><div><span>B： 中农</span>
+</div><div><span>C： 城市小资产阶级</span>
+</div><div><span>D： 民族资产阶级</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            贫雇农</span></p><p></div><hr/><h3><span>270. 中国特色社会主义进入新时代，我国社会主要矛盾已经转化为人民日益增长的</span><strong></strong><span>需要和</span><strong></strong><span>的发展之间的矛盾</span>&#12290;</h3><div><span>A： 美好生活不充分不平衡</span>
+</div><div><span>B： 幸福生活不平衡不充分</span>
+</div><div><span>C： 幸福生活不充分不平衡</span>
+</div><div><span>D： D. 美好生活不平衡不充分</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            D. 美好生活不平衡不充分</span></p><p></div><hr/><h3><span>271. 坚持党的领导，核心是坚持党的（）</span></h3><div><span>A： 先进性</span>
+</div><div><span>B： 纯洁性</span>
+</div><div><span>C： 进步性</span>
+</div><div><span>D： 时代性</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            先进性</span></p><p></div><hr/><h3><span>272. 下列哪项不是毛泽东等第一代领导人提出的中国工业化思想？</span></h3><div><span>A： 以农业为基础，以工业为主导</span>
+</div><div><span>B： 为实现“四化”而实行“两步走”的发展战略</span>
+</div><div><span>C： 在综合平衡中稳步前进的方针</span>
+</div><div><span>D： 深化要素市场化改革</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            深化要素市场化改革</span></p><p></div><hr/><h3><span>273. 新时代党的建设总要求是</span><strong><span>__</span></strong><strong><span>__</span></strong>&#12290;</h3><div><span>A： 坚持和加强党的全面领导，坚持党要管党、全面从严治党</span>
+</div><div><span>B： 以加强党的长期执政能力建设、先进性和纯洁性建设为主线，以党的政治建设为统领，以坚定理想信念宗旨为根基，以调动全党积极性、主动性、创造性为着力点</span>
+</div><div><span>C： 全面推进党的政治建设、思想建设、组织建设、作风建设、纪律建设</span>
+</div><div><span>D： 把制度建设贯穿其中，深入推进反腐败斗争，不断提高党的建设质量</span>
+</div><div><span>E： 把党建设成为始终走在时代前列、人民衷心拥护、勇于自我革命、经得起各种风浪考验、朝气蓬勃的马克思主义执政党</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>坚持和加强党的全面领导，坚持党要管党、全面从严治党</span><br>
+<span>以加强党的长期执政能力建设、先进性和纯洁性建设为主线，以党的政治建设为统领，以坚定理想信念宗旨为根基，以调动全党积极性、主动性、创造性为着力点</span><br>
+<span>全面推进党的政治建设、思想建设、组织建设、作风建设、纪律建设</span><br>
+<span>把制度建设贯穿其中，深入推进反腐败斗争，不断提高党的建设质量</span><br>
+<span>把党建设成为始终走在时代前列、人民衷心拥护、勇于自我革命、经得起各种风浪考验、朝气蓬勃的马克思主义执政党</span><br></p><p></div><hr/><h3><span>274. 我国在对个体农业进行社会主义改造的过程中，成功地开辟了一条适合我国情况的农业社会主义改造道路，其内容主要有</span></h3><div><span>A： 积极引导农民组织起来，走互助合作道路</span>
+</div><div><span>B： 遵循自愿互利、典型示范、国家帮助的原则</span>
+</div><div><span>C： 坚持积极领导、稳步前进的方针，采取循序渐进的步骤</span>
+</div><div><span>D： 有条件的地区推广农业生产责任制</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>积极引导农民组织起来，走互助合作道路</span><br>
+<span>遵循自愿互利、典型示范、国家帮助的原则</span><br>
+<span>坚持积极领导、稳步前进的方针，采取循序渐进的步骤</span><br></p><p></div><hr/><h3><span>275. 党领导人民探索社会主义建设道路，历经艰辛和曲折，在理论和实践上取得了一系列重要成果</span>&#12290;<span>这些成果具有重要的意义，主要是</span></h3><div><span>A： 巩固和发展了我国的社会主义制度</span>
+</div><div><span>B： 为开创中国特色社会主义提供了宝贵经验、理论准备、物质基础</span>
+</div><div><span>C： 为其他国家的社会主义建设提供了经验和借鉴</span>
+</div><div><span>D： 丰富了科学社会主义的理论和实践</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>巩固和发展了我国的社会主义制度</span><br>
+<span>为开创中国特色社会主义提供了宝贵经验、理论准备、物质基础</span><br>
+<span>为其他国家的社会主义建设提供了经验和借鉴</span><br>
+<span>丰富了科学社会主义的理论和实践</span><br></p><p></div><hr/><h3><span>276. 下列选项哪个不是毛泽东思想的活的灵魂？</span></h3><div><span>A： 独立自主</span>
+</div><div><span>B： 实事求是</span>
+</div><div><span>C： 群众路线</span>
+</div><div><span>D： 调查研究</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            调查研究</span></p><p></div><hr/><h3><span>277. 新民主主义革命道路是（  ）</span></h3><div><span>A： 城市暴动</span>
+</div><div><span>B： 农村包围城市</span>
+</div><div><span>C： 武装夺取政权</span>
+</div><div><span>D： 农村包围城市，武装夺取政权</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            农村包围城市，武装夺取政权</span></p><p></div><hr/><h3><span>278. 坚持科学发展，必须加快转变经济发展方式，要坚持把（    ）作为重要着力点</span>&#12290;</h3><div><span>A： 经济结构战略性调整</span>
+</div><div><span>B： 科技进步和创新</span>
+</div><div><span>C： 保障和改善民生</span>
+</div><div><span>D： 建设资源节约型、环境友好型社会</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            建设资源节约型、环境友好型社会</span></p><p></div><hr/><h3><span>279. 江泽民根据邓小平南方谈话精神，明确提出使用</span>&#8220;<span>社会主义市场经济体制</span>&#8221;<span>这个提法，社会主义市场经济是同社会主义基本制度结合在一起的，建立社会主义市场经济体制，必须（）</span></h3><div><span>A： 坚持和完善公有制经济</span>
+</div><div><span>B： 坚持和完善非公有制经济</span>
+</div><div><span>C： 坚持和完善公有制为主体、多种所有制经济共同发展</span>
+</div><div><span>D： 坚持和完善个体经济和私营经济</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            坚持和完善公有制为主体、多种所有制经济共同发展</span></p><p></div><hr/><h3><span>280. 社会主义市场经济理论的奠基人是</span></h3><div><span>A： 列宁</span>
+</div><div><span>B： 毛泽东</span>
+</div><div><span>C： 邓小平</span>
+</div><div><span>D： 江泽民</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            邓小平</span></p><p></div><hr/><h3><span>281. 下列关于</span>&#8220;<span>四个全面</span>&#8221;<span>战略布局的说法不正确的是（  ）</span>&#12290;</h3><div><span>A： 党的十七大最早提出全面建设惠及十几亿人的更高水平的小康社会</span>
+</div><div><span>B： 党的十八大提出全面建成小康社会和全面深化改革的目标</span>
+</div><div><span>C： 党的十八届四中全会提出全面推进依法治国</span>
+</div><div><span>D： 党的群众路线教育实践活动总结大会宣示全面从严治党</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            党的十七大最早提出全面建设惠及十几亿人的更高水平的小康社会</span></p><p></div><hr/><h3><span>282. </span>&#8220;<span>三步走</span>&#8221;<span>发展战略的</span>&#8220;<span>第二步</span>&#8221;<span>是指</span></h3><div><span>A： 解决温饱问题</span>
+</div><div><span>B： 达到小康水平</span>
+</div><div><span>C： 达到中等发达国家水平</span>
+</div><div><span>D： 基本实现现代化</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            达到小康水平</span></p><p></div><hr/><h3><span>283. 协调推进</span>&#8220;<span>四个全面</span>&#8221;<span>战略布局，是党的十八大以来党中央从实现</span>&#8220;<span>两个一百年</span>&#8221;<span>奋斗目标</span>&#12289;<span>实现中华民族伟大复兴的中国梦的战略高度，统敌国内国际两个大局，把握我国发展新征确定的治国理政新方略</span>&#12290;<span>在</span>&#8220;<span>四个全面</span>&#8221;<span>战略布局中居于引领地位的是（    ）</span></h3><div><span>A： 全面从严治党</span>
+</div><div><span>B： 全面深化改革</span>
+</div><div><span>C： 全面依法治国</span>
+</div><div><span>D： 全面建成小康社会</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            全面建成小康社会</span></p><p></div><hr/><h3><span>284. 中国革命最基本的动力是（  ）</span></h3><div><span>A： 无产阶级</span>
+</div><div><span>B： 农民</span>
+</div><div><span>C： 城市小资产阶级</span>
+</div><div><span>D： 民族资产阶级</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            无产阶级</span></p><p></div><hr/><h3><span>285. 党的执政地位，决定了党内监督在党和国家各种监督形式中是</span><strong></strong><span> 的</span></h3><div><span>A： 最基本</span>
+</div><div><span>B： 第一位</span>
+</div><div><span>C： 十分重要</span>
+</div><div><span>D： 极为重要</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>最基本</span><br>
+<span>第一位</span><br></p><p></div><hr/><h3><span>286. 社会主义的本质是</span></h3><div><span>A： 解放和发展生产力</span>
+</div><div><span>B： 消灭剥削</span>
+</div><div><span>C： 消除两极分化</span>
+</div><div><span>D： 最终达到共同富裕</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>解放和发展生产力</span><br>
+<span>消灭剥削</span><br>
+<span>消除两极分化</span><br>
+<span>最终达到共同富裕</span><br></p><p></div><hr/><h3><span>287. 新民主主义革命的动力是（  ）</span></h3><div><span>A： 无产阶级</span>
+</div><div><span>B： 农民</span>
+</div><div><span>C： 城市小资产阶级</span>
+</div><div><span>D： 民族资产阶级</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>无产阶级</span><br>
+<span>农民</span><br>
+<span>城市小资产阶级</span><br>
+<span>民族资产阶级</span><br></p><p></div><hr/><h3><span>288. 新民主主义革命的领导力量是（  ）</span></h3><div><span>A： 无产阶级</span>
+</div><div><span>B： 农民</span>
+</div><div><span>C： 城市小资产阶级</span>
+</div><div><span>D： 民族资产阶级</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            无产阶级</span></p><p></div><hr/><h3><span>289. 邓小平首次提出</span>&#8220;<span>建设有中国特色社会主义</span>&#8221;<span>这一重大命题是在</span></h3><div><span>A： 中共八大</span>
+</div><div><span>B： 中共十一届三中全会</span>
+</div><div><span>C： 中共十二大</span>
+</div><div><span>D： 中共十三大</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            中共十二大</span></p><p></div><hr/><h3><span>290. </span><strong><span>_</span></strong><span> 是维护国家安全的新型作战力量，是我军新质作战能力的重要增长点</span></h3><div><span>A： 空军</span>
+</div><div><span>B： 海军</span>
+</div><div><span>C： 火箭军</span>
+</div><div><span>D： 战略支援部队</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            战略支援部队</span></p><p></div><hr/><h3><span>291. 建设社会主义政治文明，最根本的就是要坚持党的领导</span>&#12289;<span>人民当家作主和依法治国的有机统一，社会主义民主政治的本质要求是（）</span></h3><div><span>A： 党的领导</span>
+</div><div><span>B： 人民当家做主</span>
+</div><div><span>C： 依法治国</span>
+</div><div><span>D： 依宪治国</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人民当家做主</span></p><p></div><hr/><h3><span>292. 毛泽东在1957年2月所做的</span>&#12298;<span>关于正确处理人民内部矛盾的问题</span>&#12299;<span>的报告中，系统论述了社会主义社会矛盾的理论</span>&#12290;<span>毛泽东强调，社会主义国家政治生活的主题是</span></h3><div><span>A： 正确区分和处理两类不同性质矛盾的问题</span>
+</div><div><span>B： 正确处理人民内部矛盾的问题</span>
+</div><div><span>C： 正确处理敌我矛盾的问题</span>
+</div><div><span>D： 正确认识和处理阶级斗争的问题</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            正确处理人民内部矛盾的问题</span></p><p></div><hr/><h3><span>293. 新民主主义革命道路指的是（   ）</span></h3><div><span>A： 十月革命式的城市暴动</span>
+</div><div><span>B： 游击战和有利条件下的运动战</span>
+</div><div><span>C： 改良主义的议会选举</span>
+</div><div><span>D： 农村包围城市，武装夺取政权</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            农村包围城市，武装夺取政权</span></p><p></div><hr/><h3><span>294. </span>&#8220;<span>三个代表</span>&#8221;<span>是指（）</span></h3><div><span>A： 始终代表中国先进生产力的发展要求</span>
+</div><div><span>B： 始终代表中国先进文化的前进方向</span>
+</div><div><span>C： 始终代表中国最广大人民的根本利益</span>
+</div><div><span>D： 始终代表工人阶级的根本利益</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>始终代表中国先进生产力的发展要求</span><br>
+<span>始终代表中国先进文化的前进方向</span><br>
+<span>始终代表中国最广大人民的根本利益</span><br></p><p></div><hr/><h3><span>295. 中国共产党在中国革命中战胜敌人的主要法宝是（    ）</span>&#12290;</h3><div><span>A： 党的建设</span>
+</div><div><span>B： 武装斗争</span>
+</div><div><span>C： 整风</span>
+</div><div><span>D： 统一战线</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>党的建设</span><br>
+<span>武装斗争</span><br>
+<span>统一战线</span><br></p><p></div><hr/><h3><span>296. 社会主义现代化建设的根本政治保证是</span></h3><div><span>A： 坚持以经济建设为中心</span>
+</div><div><span>B： 坚持四项基本原则</span>
+</div><div><span>C： 坚持改革开放</span>
+</div><div><span>D： 坚持人民当家作主</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            坚持四项基本原则</span></p><p></div><hr/><h3><span>297. </span><strong><span>__</span></strong><span>___是人民军队的立军之本</span></h3><div><span>A： 政治建军</span>
+</div><div><span>B： 改革强军</span>
+</div><div><span>C： 科技兴军</span>
+</div><div><span>D： 依法治军</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            政治建军</span></p><p></div><hr/><h3><span>298. 近代中国的基本国情是（  ）</span></h3><div><span>A： 半殖民地</span>
+</div><div><span>B： 半封建</span>
+</div><div><span>C： 半殖民地半封建</span>
+</div><div><span>D： 半封建半殖民地</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            半殖民地半封建</span></p><p></div><hr/><h3><span>299. 新时代中国特色社会主义思想，明确坚持和发展中国特色社会主义，总任务是</span></h3><div><span>A： 实现社会主义现代化和中华民族伟大复兴</span>
+</div><div><span>B： 实现全面建成小康社会</span>
+</div><div><span>C： 实现中国梦</span>
+</div><div><span>D： 实现四个现代化</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            实现社会主义现代化和中华民族伟大复兴</span></p><p></div><hr/><h3><span>300. 党的十六大的主题是：高举邓小平理论伟大旗帜全面贯彻</span>&#8220;<span>三个代表</span>&#8221;<span>重要思想继往开来与时俱进全面建设(    )加快推进社会主义现代化为开创中国特色社会主义事业新局面而奋斗</span>&#12290;</h3><div><span>A： 小康社会</span>
+</div><div><span>B： 现代化社会</span>
+</div><div><span>C： 富裕社会</span>
+</div><div><span>D： 发达社会</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            小康社会</span></p><p></div><hr/><h3><span>301. 科学发展观的核心立场是（  ）</span></h3><div><span>A： 发展</span>
+</div><div><span>B： 全面协调可持续</span>
+</div><div><span>C： 以人为本</span>
+</div><div><span>D： 统筹兼顾</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            以人为本</span></p><p></div><hr/><h3><span>302. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想核心在（）</span></h3><div><span>A： 实事求是</span>
+</div><div><span>B： 保持党的先进性</span>
+</div><div><span>C： 坚持与时俱进</span>
+</div><div><span>D： 坚持执政为民</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            保持党的先进性</span></p><p></div><hr/><h3><span>303. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想是（）提出来的</span></h3><div><span>A： 江泽民</span>
+</div><div><span>B： 胡锦涛</span>
+</div><div><span>C： 习近平</span>
+</div><div><span>D： 邓小平</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            江泽民</span></p><p></div><hr/><h3><span>304. 坚持科学发展，必须加快转变经济发展方式，要坚持把（    ）作为重要支撑</span>&#12290;</h3><div><span>A： 经济结构战略性调整</span>
+</div><div><span>B： 科技进步和创新</span>
+</div><div><span>C： 保障和改善民生</span>
+</div><div><span>D： 建设资源节约型、环境友好型社会</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            科技进步和创新</span></p><p></div><hr/><h3><span>305. 新民主主义革命的总路线是在（  ）提出的</span></h3><div><span>A： 《中国革命和中国共产党》</span>
+</div><div><span>B： 《新民主主义论》</span>
+</div><div><span>C： 《在晋绥干部会议上的讲话》</span>
+</div><div><span>D： 《论联合政府》</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            《在晋绥干部会议上的讲话》</span></p><p></div><hr/><h3><span>306. 我国对个体手工业的社会主义改造，采取了类似改造个体农业的逐步过渡的方法</span>&#12290;<span>以下逐步过渡的形式中，在性质上相一致的过渡形式是</span></h3><div><span>A： 手工业供销小组</span>
+</div><div><span>B： 手工业供销合作社</span>
+</div><div><span>C： 手工业生产合作社</span>
+</div><div><span>D： 市场化改造</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>手工业供销小组</span><br>
+<span>手工业供销合作社</span><br>
+<span>手工业生产合作社</span><br></p><p></div><hr/><h3><span>307. 领导干部一定要讲学习</span>&#12289;<span>讲政治</span>&#12289;<span>讲正气，讲正气就是要（）</span></h3><div><span>A： 坚持学习、学习、再学习，实践、实践、再实践</span>
+</div><div><span>B： 坚定正确的政治方向、政治立场和政治观点，严守政治纪律</span>
+</div><div><span>C： 提高政治敏锐性和政治鉴别力</span>
+</div><div><span>D： 坚持和发扬共产党人的政治本色与革命气节</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            坚持和发扬共产党人的政治本色与革命气节</span></p><p></div><hr/><h3><span>308. 坚持党在社会主义初级阶段的基本路线不动摇，关键是坚持</span></h3><div><span>A： 以经济建设为中心不动摇                 </span><br/></div><div><span>B： 自力更生、艰创业的方针不动摇</span>
+</div><div><span>C： 两手抓．两手都要硬的方针不动摇</span>
+</div><div><span>D： 改革开放不动摇</span><br/></div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            以经济建设为中心不动摇                   </span></p><p></div><hr/><h3><span>309. 社会主义的根本任务是（）</span></h3><div><span>A： 发展经济</span>
+</div><div><span>B： 发展科学技术</span>
+</div><div><span>C： 发展生产力</span>
+</div><div><span>D： 解放生产力</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            发展生产力</span></p><p></div><hr/><h3><span>310. 党中央</span>&#8220;<span>四个全面战略布局的提出，第一次将（    ）论述为全面深化改革的</span>&#8220;<span>姊妹篇</span>&#8221;<span>，形成</span>&#8220;<span>鸟之两翼</span>&#12289;<span>车之两轮</span>&#8221;</h3><div><span>A： 全面建成小康社会</span>
+</div><div><span>B： 全面依法治国</span>
+</div><div><span>C： 全面从严治党</span>
+</div><div><span>D： 对外开放</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            全面依法治国</span></p><p></div><hr/><h3><span>311. 下列哪项不是我国社会主义改造的历史经验？</span></h3><div><span>A： 坚持社会主义工业化建设与社会主义改造同时并举</span>
+</div><div><span>B： 用和平方法进行改造</span>
+</div><div><span>C： 采取积极引导、逐步过渡的方式</span>
+</div><div><span>D： 暴力剥夺、行政强制的方式</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            暴力剥夺、行政强制的方式</span></p><p></div><hr/><h3><span>312. 走中国工业化道路，必须调整和完善所有制结构</span>&#12290;<span>为此，毛泽东</span>&#12289;<span>刘少奇</span>&#12289;<span>周恩来提出了</span></h3><div><span>A： 把资本主义经济作为社会主义经济的补充的思想</span>
+</div><div><span>B： 注意发展手工业和农业多种经营的思想</span>
+</div><div><span>C： “三个主体，三个补充”的思想</span>
+</div><div><span>D： 公有制为主体，多种所有制经济共同发展的思想</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            把资本主义经济作为社会主义经济的补充的思想</span></p><p></div><hr/><h3><span>313. 科学发展观是基于（    ）的基础上提出来的</span>&#12290;</h3><div><span>A： 准备把握世界发展趋势</span>
+</div><div><span>B： 科学判断党的历史方位</span>
+</div><div><span>C： 认真总结我国发展经验</span>
+</div><div><span>D： 深入分析我国发展阶段性特征</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>准备把握世界发展趋势</span><br>
+<span>认真总结我国发展经验</span><br>
+<span>深入分析我国发展阶段性特征</span><br></p><p></div><hr/><h3><span>314. 社会主义基本制度确立的重大意义在于</span></h3><div><span>A： 极大地提高了工人阶级和广大劳动人民的积极性和创造性，极大地促进了我国社会主义生产力的发展</span>
+</div><div><span>B： 形成了社会主义制度的中国模式，为其他国家确立社会主义提供了标准</span>
+</div><div><span>C： 广大劳动人民真正成为国家的主人</span>
+</div><div><span>D： 是世界社会主义运动史上又一个历史性的伟大胜利，进一步改变了世界政治经济格局</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>极大地提高了工人阶级和广大劳动人民的积极性和创造性，极大地促进了我国社会主义生产力的发展</span><br>
+<span>广大劳动人民真正成为国家的主人</span><br>
+<span>是世界社会主义运动史上又一个历史性的伟大胜利，进一步改变了世界政治经济格局</span><br></p><p></div><hr/><h3><span>315. 1939年和1940年，毛泽东完整地提出新民主主义革命的理论，标志毛泽东思想发展和成熟的主要文献是：</span></h3><div><span>A： 《＜共产党人＞发刊词》</span>
+</div><div><span>B： 《论人民民主专政》</span>
+</div><div><span>C： 《新民主主义论》</span>
+</div><div><span>D： 《中国革命和中国共产党》</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>《＜共产党人＞发刊词》</span><br>
+<span>《新民主主义论》</span><br>
+<span>《中国革命和中国共产党》</span><br></p><p></div><hr/><h3><span>316. 新民主主义革命的经济纲领是（  ）</span></h3><div><span>A： 没收封建地主阶级的土地归农民所有</span>
+</div><div><span>B： 没收官僚资产阶级的垄断资本归新民主主义国家所有</span>
+</div><div><span>C： 保护民族工商业</span>
+</div><div><span>D： 推翻帝国主义统治</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>没收封建地主阶级的土地归农民所有</span><br>
+<span>没收官僚资产阶级的垄断资本归新民主主义国家所有</span><br>
+<span>保护民族工商业</span><br></p><p></div><hr/><h3><span>317. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想加强和改进党的建设，是推进中国特色社会主义事业的强大理论武器，体现在（）</span></h3><div><span>A： 把发展先进生产力、发展先进文化和实现最广大人民的根本利益统一起来，从深层次上揭示了社会主义制度不断完善和发展的途径</span>
+</div><div><span>B： 不断完善社会主义市场经济体制，积极稳妥地推进政治体制改革，加强社会主义精神文明建设</span>
+</div><div><span>C： 对党的建设提出了新要求</span>
+</div><div><span>D： 从新的高度提出必须不断改进党的领导方式和执政方式</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>把发展先进生产力、发展先进文化和实现最广大人民的根本利益统一起来，从深层次上揭示了社会主义制度不断完善和发展的途径</span><br>
+<span>不断完善社会主义市场经济体制，积极稳妥地推进政治体制改革，加强社会主义精神文明建设</span><br>
+<span>对党的建设提出了新要求</span><br>
+<span>从新的高度提出必须不断改进党的领导方式和执政方式</span><br></p><p></div><hr/><h3><span>318. 中国特色社会主义是改革开放新时期开创的，也是建立在我们党长期奋斗基础上的，是由我们党的几代中央领导集体团结带领全党全国人民历经千辛万苦</span>&#12289;<span>付出各种代价</span>&#12289;<span>接力探索取得的</span>&#12290;<span>以毛泽东同志为核心的党的第一代中央领导集体在探索过程中，虽然经历了严重曲折，但党在社会主义建设中取得的独创性理论成果和巨大成就，为新的历史时期开创中国特色社会主义提供了</span></h3><div><span>A： 宝贵经验</span>
+</div><div><span>B： 理论准备</span>
+</div><div><span>C： 物质基础</span>
+</div><div><span>D： 改革目标</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>宝贵经验</span><br>
+<span>理论准备</span><br>
+<span>物质基础</span><br></p><p></div><hr/><h3><span>319. 科学发展观的根本方法是（  ）</span></h3><div><span>A： 以人为本</span>
+</div><div><span>B： 发展</span>
+</div><div><span>C： 全面协调可持续</span>
+</div><div><span>D： 统筹兼顾</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            统筹兼顾</span></p><p></div><hr/><h3><span>320. 我国社会主义初级阶段是指</span></h3><div><span>A： 任何国家进入社会主义都要经历的初始阶段</span>
+</div><div><span>B： 我国在生产力落后、商品经济不发达条件下，建立社会主义必然要经历的特定阶段</span>
+</div><div><span>C： 从新民主主义向社会主义社会过渡阶段</span>
+</div><div><span>D： 从社会主义社会向共产主义社会过渡阶段</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            我国在生产力落后、商品经济不发达条件下，建立社会主义必然要经历的特定阶段</span></p><p></div><hr/><h3><span>321. 在上世纪50年代中期实现国家工业化道路的选择上，我们选择了</span></h3><div><span>A： 资本主义道路</span>
+</div><div><span>B： 社会主义道路</span>
+</div><div><span>C： 市场经济道路</span>
+</div><div><span>D： 民主社会主义道路</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            社会主义道路</span></p><p></div><hr/><h3><span>322. 新时代中国特色社会主义思想，明确坚持和发展中国特色社会主义，总任务是实现社会主义现代化和中华民族伟大复兴，在全面建成小康社会的基础上，分</span><strong></strong><span>在本世纪中叶建成富强民主文明和谐美丽的社会主义现代化强国</span>&#12290;</h3><div><span>A： 两步走</span>
+</div><div><span>B： 三步走</span>
+</div><div><span>C： 四步走</span>
+</div><div><span>D： 五步走</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            两步走</span></p><p></div><hr/><h3><span>323. 党的八大确立的社会主要矛盾是（    ）</span></h3><div><span>A： 资产阶级和工人阶级之间的矛盾</span>
+</div><div><span>B： 地主阶级和农民阶级之间的矛盾</span>
+</div><div><span>C： 人民日益增长的美好生活需要和不平衡不充分的发展之间的矛盾</span>
+</div><div><span>D： 人民群众对于经济文化迅速发展的需要同当前经济文化不能满足人民需要的状况之间的矛盾</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            人民群众对于经济文化迅速发展的需要同当前经济文化不能满足人民需要的状况之间的矛盾</span></p><p></div><hr/><h3><span>324. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想提出了党的建设的新要求包括（）</span></h3><div><span>A： 必须使全党始终保持与时俱进的精神状态，不断开拓马克思主义理论发展的新境界</span>
+</div><div><span>B： 必须把发展作为党执政兴国的第一要务，不断开创现代化建设的新局面</span>
+</div><div><span>C： 必须最广泛最充分地调动一切积极因素，不断为中华民族伟大复兴增添新力量</span>
+</div><div><span>D： 必须以改革的精神推进党的建设，不断为党的肌体注入新活力，充分体现了共产党人的先进性和时代精神，为加强党的建设指明了方向</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>必须使全党始终保持与时俱进的精神状态，不断开拓马克思主义理论发展的新境界</span><br>
+<span>必须把发展作为党执政兴国的第一要务，不断开创现代化建设的新局面</span><br>
+<span>必须最广泛最充分地调动一切积极因素，不断为中华民族伟大复兴增添新力量</span><br>
+<span>必须以改革的精神推进党的建设，不断为党的肌体注入新活力，充分体现了共产党人的先进性和时代精神，为加强党的建设指明了方向</span><br></p><p></div><hr/><h3><span>325. 1956年起，毛泽东开始探索适合中国特点的社会主义建设道路</span>&#12290;<span>与此相联系，毛泽东提出了一系列新思想，主要有</span></h3><div><span>A： 强调独立自主地探索适合中国情况的社会主义建设道路</span>
+</div><div><span>B： 提出以苏为鉴</span>
+</div><div><span>C： 提出马克思主义同中国实际的“第二次结合”</span>
+</div><div><span>D： 强调改革开放</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>强调独立自主地探索适合中国情况的社会主义建设道路</span><br>
+<span>提出以苏为鉴</span><br>
+<span>提出马克思主义同中国实际的“第二次结合”</span><br></p><p></div><hr/><h3><span>326. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想的主要内容包括（）</span></h3><div><span>A： 发展是党执政兴国的第一要务</span>
+</div><div><span>B： 建立社会主义市场经济体制和建设社会主义政治文明</span>
+</div><div><span>C： 推进党的建设新的伟大工程</span>
+</div><div><span>D： 建立巩固的国防、加强军队的革命化现代化正规化建设的思想</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>发展是党执政兴国的第一要务</span><br>
+<span>建立社会主义市场经济体制和建设社会主义政治文明</span><br>
+<span>推进党的建设新的伟大工程</span><br>
+<span>建立巩固的国防、加强军队的革命化现代化正规化建设的思想</span><br></p><p></div><hr/><h3><span>327. </span><strong></strong><span> 是我军发展壮大</span>&#12289;<span>制胜未来的关键一招</span></h3><div><span>A： 人才</span>
+</div><div><span>B： 创新</span>
+</div><div><span>C： 开放</span>
+</div><div><span>D： 改革</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            改革</span></p><p></div><hr/><h3><span>328. </span>&#8220;<span>一国两制</span>&#8221;<span>的核心是</span></h3><div><span>A： 一个中国</span>
+</div><div><span>B： 两制并存</span>
+</div><div><span>C： 高度自治</span>
+</div><div><span>D： 和平谈判</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            一个中国</span></p><p></div><hr/><h3><span>329. 走中国工业化道路的思想是党在社会主义建设道路初步探索中取得的理论成果之一</span>&#12290;<span>毛泽东所说的中国工业化道路，就是正确处理重工业</span>&#12289;<span>轻工业和农业的关系，也就是他在</span>&#12298;<span>论十大关系</span>&#12299;<span>中论述的第一大关系</span>&#12290;<span>为此，毛泽东提出了以农业为基础，以工业为主导，以农</span>&#12289;<span>轻</span>&#12289;<span>重为序发展国民经济的总方针，以及一整套</span>&#8220;<span>两条腿走路</span>&#8221;<span>的方针，即</span></h3><div><span>A： 重工业和轻工业同时并举</span>
+</div><div><span>B： 中央工业和地方工业同时并举</span>
+</div><div><span>C： 沿海工业和内地工业同时并举</span>
+</div><div><span>D： 外资企业和内资企业同时并举</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>重工业和轻工业同时并举</span><br>
+<span>中央工业和地方工业同时并举</span><br>
+<span>沿海工业和内地工业同时并举</span><br></p><p></div><hr/><h3><span>330. 新民主主义革命的三大法宝是（  ）</span></h3><div><span>A： 统一战线</span>
+</div><div><span>B： 群众路线</span>
+</div><div><span>C： 武装斗争</span>
+</div><div><span>D： 党的建设</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>统一战线</span><br>
+<span>武装斗争</span><br>
+<span>党的建设</span><br></p><p></div><hr/><h3><span>331. 我国要着力培养</span><strong></strong>&#12289;<strong><span>_</span></strong>&#12289;<strong><span>__</span></strong>&#12289;<span>有品德的新时代革命军人</span></h3><div><span>A： 有灵魂</span>
+</div><div><span>B： 有本事</span>
+</div><div><span>C： 有血性</span>
+</div><div><span>D： 有思想</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>有灵魂</span><br>
+<span>有本事</span><br>
+<span>有血性</span><br></p><p></div><hr/><h3><span>332. 在中国共产党历史上，最早提出</span>&#8220;<span>马克思主义中国化</span>&#8221;<span>这个命题的是</span></h3><div><span>A： 李大钊</span>
+</div><div><span>B： 陈独秀</span>
+</div><div><span>C： 毛泽东</span>
+</div><div><span>D： 张闻天</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            毛泽东</span></p><p></div><hr/><h3><span>333. 社会主义初级阶段基本路线提出的奋斗目标是</span></h3><div><span>A： 国民经济现代化</span>
+</div><div><span>B： 工业化和生产的商品化</span>
+</div><div><span>C： 实现工业化和生产的社会化</span>
+</div><div><span>D： 把我国建设成为富强、民主、文明、和谐、美丽的社会主义国家</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            把我国建设成为富强、民主、文明、和谐、美丽的社会主义国家</span></p><p></div><hr/><h3><span>334. </span>&#8220;<span>发展才是硬道理</span>&#8221;<span>论断提出者是</span></h3><div><span>A： 马克思</span>
+</div><div><span>B： 毛泽东</span>
+</div><div><span>C： 邓小平</span>
+</div><div><span>D： 习近平</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            邓小平</span></p><p></div><hr/><h3><span>335. 我们呼吁，各国人民同心协力，构建人类命运共同体，建设</span><strong><span>__</span></strong><span>的世界</span>&#12290;</h3><div><span>A： 持久和平、普遍安全、共同繁荣、开放包容、公平正义</span>
+</div><div><span>B： 持久和平、普遍安全、共同繁荣、公平正义、清洁美丽</span>
+</div><div><span>C： 持久和平、普遍安全、共同繁荣、开放包容、清洁美丽</span>
+</div><div><span>D： 持久和平、普遍安全、公平正义、开放包容、清洁美丽</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            持久和平、普遍安全、共同繁荣、开放包容、清洁美丽</span></p><p></div><hr/><h3><span>336. 新民主主义社会在经济上实行五种经济成分并存的经济制度</span>&#12290;<span>五种经济成分中，在国民经济中居于领导地位的是</span></h3><div><span>A： 国营经济</span>
+</div><div><span>B： 合作社经济</span>
+</div><div><span>C： 个体经济</span>
+</div><div><span>D： 国家资本主义</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            国营经济</span></p><p></div><hr/><h3><span>337. 在近现代中国的历史上，毛泽东思想的历史地位和历史作用体现在：</span></h3><div><span>A： 毛泽东思想是夺取中国革命胜利的理论武器</span>
+</div><div><span>B： 毛泽东思想是社会主义中国立国建国的理论基础</span>
+</div><div><span>C： 毛泽东思想是邓小平理论的思想渊源和理论先导</span>
+</div><div><span>D： 毛泽东思想是中华民族团结和振兴的精神支柱</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>毛泽东思想是夺取中国革命胜利的理论武器</span><br>
+<span>毛泽东思想是社会主义中国立国建国的理论基础</span><br>
+<span>毛泽东思想是邓小平理论的思想渊源和理论先导</span><br>
+<span>毛泽东思想是中华民族团结和振兴的精神支柱</span><br></p><p></div><hr/><h3><span>338. 以人为本是科学发展观的核心立场，其主要内容包括（    ）</span></h3><div><span>A： 以最广大人民的根本利益为本</span>
+</div><div><span>B： 坚持发展为了人民</span>
+</div><div><span>C： 坚持发展依靠人民</span>
+</div><div><span>D： 坚持发展成果由人民共享</span>
+</div><div><span>E： 最终是为了实现人的全面发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>以最广大人民的根本利益为本</span><br>
+<span>坚持发展为了人民</span><br>
+<span>坚持发展依靠人民</span><br>
+<span>坚持发展成果由人民共享</span><br>
+<span>最终是为了实现人的全面发展</span><br></p><p></div><hr/><h3><span>339. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想形成的历史条件（）</span></h3><div><span>A： 是在对冷战结束后国际局势科学判断的基础上形成的</span>
+</div><div><span>B： 在科学判断党的历史方位和总结历史经验的基础上提出来的</span>
+</div><div><span>C： 在建设中国特色社会主义伟大实践基础上形成的</span>
+</div><div><span>D： 是在开始全面建设小康社会的形势下提出来的</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>是在对冷战结束后国际局势科学判断的基础上形成的</span><br>
+<span>在科学判断党的历史方位和总结历史经验的基础上提出来的</span><br>
+<span>在建设中国特色社会主义伟大实践基础上形成的</span><br></p><p></div><hr/><h3><span>340. 实施共建</span>&#8220;<span>一带一路</span>&#8221;<span>倡议，发起创办亚洲基础设施投资银行，设立丝路基金，举办首届</span>&#8220;<span>一带一路</span>&#8221;<span>国际合作高峰论坛</span>&#12289;<span>亚太经合组织领导人非正式会议</span>&#12289;<span>二十国集团领导人</span><strong></strong><span>峰会</span>&#12289;<span>金砖国家领导人</span><strong></strong><span>会晤</span>&#12289;<span>亚信峰会</span>&#12290;</h3><div><span>A： 北京，南京</span>
+</div><div><span>B： 杭州，厦门</span>
+</div><div><span>C： 南京，北京</span>
+</div><div><span>D： 厦门，杭州</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            杭州，厦门</span></p><p></div><hr/><h3><span>341. 成为党探索中国社会主义建设道路良好开端的文章，是毛泽东发表的</span></h3><div><span>A： 《论人民民主专政》</span>
+</div><div><span>B： 《论十大关系》</span>
+</div><div><span>C： 《纪念孙中山先生》</span>
+</div><div><span>D： 《关于正确处理人民内部矛盾的问题》</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            《论十大关系》</span></p><p></div><hr/><h3><span>342. </span>&#8220;<span>全民国家安全教育日</span>&#8221;<span>为每年的（   ）</span>&#12290;</h3><div><span>A： 43205</span>
+</div><div><span>B： 43235</span>
+</div><div><span>C： 43271</span>
+</div><div><span>D： 43392</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            43205</span></p><p></div><hr/><h3><span>343. 社会主义的根本任务是</span></h3><div><span>A： 变革生产关系</span>
+</div><div><span>B： 实现共同富裕</span>
+</div><div><span>C： 解放和发展生产力</span>
+</div><div><span>D： 消灭剥削</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            解放和发展生产力</span></p><p></div><hr/><h3><span>344. 实行公有制为主体</span>&#12289;<span>多种所有制经济共同发展的基本经济制度，是中国共产党确立的一项大政方针，必须毫不动摇巩固和发展公有制经济，毫不动摇（）     </span>&#12289;<span> （） 和  （） 非公有制经济发展</span>&#12290;<span>非公有制经济在我国经济社会发展中的地位和作用没有变，我们鼓励</span>&#12289;<span>支持</span>&#12289;<span>引导非公有制经济发展的方针政策没有变，我们致力于为非公有制经济发展营造良好环境和提供更多机会的方针政策没有变</span>&#12290;</h3><div><span>A： 鼓励</span>
+</div><div><span>B： 支持</span>
+</div><div><span>C： 引导</span>
+</div><div><span>D： 奖励</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>鼓励</span><br>
+<span>支持</span><br>
+<span>引导</span><br></p><p></div><hr/><h3><span>345. 综合分析国际国内形势和我国发展条件，从二</span>&#12295;<span>二</span>&#12295;<span>年到本世纪中叶可以分两个阶段来安排</span>&#12290;<span>第二个阶段，从</span><strong><span>_</span></strong><span>到</span><strong><span>_</span></strong><span>，在基本实现现代化的基础上，再奋斗十五年，把我国建成富强民主文明和谐美丽的社会主义现代化强国</span>&#12290;</h3><div><span>A： 二二年，二三五年</span>
+</div><div><span>B： 二三五年，二五年</span>
+</div><div><span>C： 二三年，二四五年</span>
+</div><div><span>D： 二三五年，本世纪中叶</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            二三五年，本世纪中叶</span></p><p></div><hr/><h3><span>346. 新时期最鲜明的特点是</span></h3><div><span>A： 科技创新</span>
+</div><div><span>B： 绿色发展</span>
+</div><div><span>C： 合作共赢</span>
+</div><div><span>D： 改革开放</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            改革开放</span></p><p></div><hr/><h3><span>347. 社会主义根本任务是</span></h3><div><span>A： 坚持四项基本原则</span>
+</div><div><span>B： 坚持改革开放</span>
+</div><div><span>C： 发展生产力</span>
+</div><div><span>D： 实现共同富裕</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            发展生产力</span></p><p></div><hr/><h3><span>348. </span><strong><span>__</span></strong><span> 是实现富国和强军相统一的重要政治保障，是我党我军特有的政治优势</span></h3><div><span>A： 健全体制机制</span>
+</div><div><span>B： 强化战略规划</span>
+</div><div><span>C： 军政军民团结</span>
+</div><div><span>D： 突出重点领域</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            军政军民团结</span></p><p></div><hr/><h3><span>349. 我国社会主义改造基本完成于</span></h3><div><span>A： 1956年底</span>
+</div><div><span>B： 1957年底</span>
+</div><div><span>C： 1958年底</span>
+</div><div><span>D： 1959年底</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            1956年底</span></p><p></div><hr/><h3><span>350. 坚持科学发展，必须加快转变经济发展方式，要坚持把（    ）作为主攻方向</span>&#12290;</h3><div><span>A： 经济结构战略性调整</span>
+</div><div><span>B： 科技进步和创新</span>
+</div><div><span>C： 保障和改善民生</span>
+</div><div><span>D： 建设资源节约型、环境友好型社会</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            经济结构战略性调整</span></p><p></div><hr/><h3><span>351. 科学发展观的第一要义是（   ）</span></h3><div><span>A： 以人为本</span>
+</div><div><span>B： 发展</span>
+</div><div><span>C： 全面协调可持续</span>
+</div><div><span>D： 统筹兼顾</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            发展</span></p><p></div><hr/><h3><span>352. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想把发展先进生产力</span>&#12289;<span>发展先进文化和实现最广大人民的根本利益统一起来，始终代表中国最广大人民的根本利益，体现了（）</span></h3><div><span>A： 发展社会主义经济、建设社会主义物质文明的理想和价值目标</span>
+</div><div><span>B： 发展社会主义文化、建设社会主义精神文明的理想和价值目标</span>
+</div><div><span>C： 我们党的宗旨和我们国家的性质</span>
+</div><div><span>D： 社会主义制度不断完善和发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            我们党的宗旨和我们国家的性质</span></p><p></div><hr/><h3><span>353. 全党要更加自觉地增强</span><strong></strong>&#12289;<strong></strong>&#12289;<strong></strong>&#12289;<strong></strong><span>，既不走封闭僵化的老路，也不走改旗易帜的邪路，保持政治定力，坚持实干兴邦，始终坚持和发展中国特色社会主义</span>&#12290;</h3><div><span>A： 道路自信</span>
+</div><div><span>B： 理论自信</span>
+</div><div><span>C： 制度自信</span>
+</div><div><span>D： 文化自信</span>
+</div><div><span>E： 思想自信</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>道路自信</span><br>
+<span>理论自信</span><br>
+<span>制度自信</span><br>
+<span>文化自信</span><br></p><p></div><hr/><h3><span>354. 毛泽东提出探索马克思主义同中国实际即社会主义建设实际的</span>&#8220;<span>第二次结合</span>&#8221;<span>，说明中国共产党</span></h3><div><span>A： 开始探索适合中国特点的社会主义建设道路</span>
+</div><div><span>B： 开始摆脱单一的苏联模式</span>
+</div><div><span>C： 开始重新认识“什么是社会主义，怎样建设社会主义”</span>
+</div><div><span>D： 开始改革开放的事业</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>开始探索适合中国特点的社会主义建设道路</span><br>
+<span>开始摆脱单一的苏联模式</span><br></p><p></div><hr/><h3><span>355. 帝国主义统治中国和封建军阀实行专制统治的社会基础是（  ）</span></h3><div><span>A： 帝国主义</span>
+</div><div><span>B： 封建地主阶级</span>
+</div><div><span>C： 官僚资本主义</span>
+</div><div><span>D： 民族资产阶级</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            封建地主阶级</span></p><p></div><hr/><h3><span>356. 在新的长征路上，我们一定要保持理想信念坚定，不论时代如何变化，不论条件如何变化，都风雨如磐不动摇，自觉做共产主义远大理想和中国特色社会主义共同理想的__ __，永远为了真理而斗争，永远为了理想而斗争</span></h3><div><span>A： 坚定信仰者</span>
+</div><div><span>B： 忠实实践者</span>
+</div><div><span>C： 严格奉行者</span>
+</div><div><span>D： 公正检查者</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>坚定信仰者</span><br>
+<span>忠实实践者</span><br></p><p></div><hr/><h3><span>357. 中国社会主义改革是</span></h3><div><span>A： 社会主义社会发展的直接动力</span>
+</div><div><span>B： 社会主义制度的自我完善和发展</span>
+</div><div><span>C： 改变社会主义的基本制度</span>
+</div><div><span>D： 中国的第二次革命</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>社会主义社会发展的直接动力</span><br>
+<span>社会主义制度的自我完善和发展</span><br>
+<span>中国的第二次革命</span><br></p><p></div><hr/><h3><span>358. 在土地革命前期，毛泽东撰写了形成农村包围城市道路理论的着名着作有：</span></h3><div><span>A： 《中国的红色政权为什么能够存在》</span>
+</div><div><span>B： 《星星之火，可以燎原》</span>
+</div><div><span>C： 《井冈山的斗争》</span>
+</div><div><span>D： 《反对本本主义》</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>《中国的红色政权为什么能够存在》</span><br>
+<span>《星星之火，可以燎原》</span><br>
+<span>《井冈山的斗争》</span><br>
+<span>《反对本本主义》</span><br></p><p></div><hr/><h3><span>359. 依法治国的核心是(    )</span></h3><div><span>A： 有法可依有法必依执法必严违法必究</span>
+</div><div><span>B： 建设社会主义法制国家</span>
+</div><div><span>C： 依宪治国</span>
+</div><div><span>D： 建立社会主义民主政治</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            依宪治国</span></p><p></div><hr/><h3><span>360. 领导干部一定要讲学习</span>&#12289;<span>讲政治</span>&#12289;<span>讲正气，讲学习是（）</span></h3><div><span>A： 前提</span>
+</div><div><span>B： 核心</span>
+</div><div><span>C： 基础</span>
+</div><div><span>D： 保障</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            前提</span></p><p></div><hr/><h3><span>361. 党在过渡时期总路线的内容被概括为</span></h3><div><span>A： 一化一改</span>
+</div><div><span>B： 一化二改</span>
+</div><div><span>C： 一化三改</span>
+</div><div><span>D： 一化四改</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            一化三改</span></p><p></div><hr/><h3><span>362. </span><strong><span>__</span></strong>&#12289;<strong><span>__</span></strong><span>_ 是我们党建军治军的基本方略</span></h3><div><span>A： 依法治军</span>
+</div><div><span>B： 科技兴军</span>
+</div><div><span>C： 改革强军</span>
+</div><div><span>D： 从严治军</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>依法治军</span><br>
+<span>从严治军</span><br></p><p></div><hr/><h3><span>363. </span>&#8220;<span>三个代表</span>&#8221;<span>要求的科学内涵和基本内容（）</span></h3><div><span>A： 是我们党坚持以马克思列宁主义、毛泽东思想、邓小平理论和党的基本路线为指导</span>
+</div><div><span>B： 以我国改革开放和现代化建设的实际问题、以我们正在做的事情为中心</span>
+</div><div><span>C： 着眼于马克思主义理论的运用，着眼于对现实问题的思考，着眼于新的实践和新的发展</span>
+</div><div><span>D： 对党在现阶段以至今后相当长的历史时期中的基本纲领、基本任务的新概括</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>是我们党坚持以马克思列宁主义、毛泽东思想、邓小平理论和党的基本路线为指导</span><br>
+<span>以我国改革开放和现代化建设的实际问题、以我们正在做的事情为中心</span><br>
+<span>着眼于马克思主义理论的运用，着眼于对现实问题的思考，着眼于新的实践和新的发展</span><br>
+<span>对党在现阶段以至今后相当长的历史时期中的基本纲领、基本任务的新概括</span><br></p><p></div><hr/><h3><span>364. </span><strong><span>_</span></strong><span>是现代战争的核心战斗力</span></h3><div><span>A： 创新</span>
+</div><div><span>B： 科技</span>
+</div><div><span>C： 人才</span>
+</div><div><span>D： 技术</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            科技</span></p><p></div><hr/><h3><span>365. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想本质在（）</span></h3><div><span>A： 坚持执政为民</span>
+</div><div><span>B： 坚持与时俱进</span>
+</div><div><span>C： 实事求是</span>
+</div><div><span>D： 保持党的先进性</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            坚持执政为民</span></p><p></div><hr/><h3><span>366. 贯彻</span>&#8220;<span>三个代表</span>&#8221;<span>重要思想，必须把( )作为党执政兴国的第一要务，党才能实现历史使命和奋斗目标</span>&#12290;</h3><div><span>A： 教育</span>
+</div><div><span>B： 经济</span>
+</div><div><span>C： 发展</span>
+</div><div><span>D： 稳定</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            发展</span></p><p></div><hr/><h3><span>367. 党在新时代的强军目标是建设一支</span><strong><em>&#12289;</em></strong><strong>&#12289;<span>_</span></strong>&#12289;<span>的人民军队</span></h3><div><span>A： 听党指挥</span>
+</div><div><span>B： 能打胜仗</span>
+</div><div><span>C： 作风优良</span>
+</div><div><span>D： 清正廉洁</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>听党指挥</span><br>
+<span>能打胜仗</span><br>
+<span>作风优良</span><br></p><p></div><hr/><h3><span>368. 初级形式的国家资本主义企业的利润分配采用的办法是</span></h3><div><span>A： 二马分肥</span>
+</div><div><span>B： 三马分肥</span>
+</div><div><span>C： 四马分肥</span>
+</div><div><span>D： 五马分肥</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            四马分肥</span></p><p></div><hr/><h3><span>369. 党在社会主义初级阶段基本路线中兴国之要是指</span></h3><div><span>A： 坚持社会主义市场经济</span>
+</div><div><span>B： 坚持四项基本原则</span>
+</div><div><span>C： 坚持改革开放</span>
+</div><div><span>D： 以经济建设为中心</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            以经济建设为中心</span></p><p></div><hr/><h3><span>370. 坚持四项基本原则，坚持改革开放，都是为了更好地</span></h3><div><span>A： 解放生产力和发展生产力      </span><br/></div><div><span>B： 建设社会主义精神文明</span>
+</div><div><span>C： 建设社会主义政治</span>
+</div><div><span>D： 建立社会主义市场经济体制</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            解放生产力和发展生产力        </span></p><p></div><hr/><h3><span>371. 新时代中国特色社会主义思想，是</span><strong><span>_</span></strong><span>，必须长期坚持并不断发展</span>&#12290;</h3><div><span>A： 对马克思列宁主义、毛泽东思想、邓小平理论、“三个代表”重要思想、科学发展观的继承和发展</span>
+</div><div><span>B： 马克思主义中国化最新成果</span>
+</div><div><span>C： 党和人民实践经验和集体智慧的结晶</span>
+</div><div><span>D： 中国特色社会主义理论体系的重要组成部分</span>
+</div><div><span>E： 全党全国人民为实现中华民族伟大复兴而奋斗的行动指南</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>对马克思列宁主义、毛泽东思想、邓小平理论、“三个代表”重要思想、科学发展观的继承和发展</span><br>
+<span>马克思主义中国化最新成果</span><br>
+<span>党和人民实践经验和集体智慧的结晶</span><br>
+<span>中国特色社会主义理论体系的重要组成部分</span><br>
+<span>全党全国人民为实现中华民族伟大复兴而奋斗的行动指南</span><br></p><p></div><hr/><h3><span>372. 在社会主义初级阶段，解放生产力的正确途径是</span></h3><div><span>A： 革命</span>
+</div><div><span>B： 改革</span>
+</div><div><span>C： 政治运动</span>
+</div><div><span>D： 阶级斗争</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            改革</span></p><p></div><hr/><h3><span>373. </span><p><span>（）共享内涵包括__</span></p></h3><div><span>A： 全民共享</span>
+</div><div><span>B： 全面共享</span>
+</div><div><span>C： 共建共享</span>
+</div><div><span>D： 渐进共享</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>全民共享</span><br>
+<span>全面共享</span><br>
+<span>共建共享</span><br>
+<span>渐进共享</span><br></p><p></div><hr/><h3><span>374. </span><p><span>（）贯彻新发展理念、建设现代化经济体系必须坚持供给侧结构性改革。坚持质量第一、效益优先，以供给侧结构性改革为主线，推动经济发展___，提高全要素生产率。</span></p></h3><div><span>A： 质量变革</span>
+</div><div><span>B： 效率变革</span>
+</div><div><span>C： 动力变革</span>
+</div><div><span>D： 效益变革</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>质量变革</span><br>
+<span>效率变革</span><br>
+<span>动力变革</span><br></p><p></div><hr/><h3><span>375. 对民族资产阶级实行和平赎买的必要性在于，和平赎买有利于</span></h3><div><span>A： 发挥私营工商业在国计民生方面的积极作用，促进国民经济的发展</span>
+</div><div><span>B： 争取和团结民族资产阶级，团结各民主党派和各界爱国民主人士，巩固和发展统一战线</span>
+</div><div><span>C： 发挥民族资产阶级中大多数人的知识、才能、技术专长和管理经验</span>
+</div><div><span>D： 争取和团结那些原来同资产阶级相联系的知识分子为社会主义建设服务</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>发挥私营工商业在国计民生方面的积极作用，促进国民经济的发展</span><br>
+<span>争取和团结民族资产阶级，团结各民主党派和各界爱国民主人士，巩固和发展统一战线</span><br>
+<span>发挥民族资产阶级中大多数人的知识、才能、技术专长和管理经验</span><br>
+<span>争取和团结那些原来同资产阶级相联系的知识分子为社会主义建设服务</span><br></p><p></div><hr/><h3><span>376. </span><p><span>为了坚持党的领导核心地位，必须确保党始终</span></p></h3><div><span>A： 总览全局、协调各方</span>
+</div><div><span>B： 既民主又集中</span>
+</div><div><span>C： 坚持马克思主义</span>
+</div><div><span>D： 以人民为中心</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            总览全局、协调各方</span></p><p></div><hr/><h3><span>377. 党在过渡时期总路线的特征是</span></h3><div><span>A： 重视工业建设</span>
+</div><div><span>B： 强调三大改造</span>
+</div><div><span>C： 社会主义建设与社会主义改造同时并举</span>
+</div><div><span>D： 尤其重视对资本主义工商业的改造</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            社会主义建设与社会主义改造同时并举</span></p><p></div><hr/><h3><span>378. 建国初期，随着全国土地革命的基本完成，国内的主要矛盾是</span></h3><div><span>A： 人民大众同帝国主义、封建主义和国民党反动派残余势力之间的矛盾</span>
+</div><div><span>B： 工人阶级和资产阶级的矛盾</span>
+</div><div><span>C： 生产力与生产关系的矛盾和经济基础与上层建筑的矛盾</span>
+</div><div><span>D： 人民日益增长的物质文化需求同落后的社会生产之间的矛盾</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            工人阶级和资产阶级的矛盾</span></p><p></div><hr/><h3><span>379. 加强和改进党的作风建设，核心问题是（）</span></h3><div><span>A： 密切联系群众</span>
+</div><div><span>B： 全心全意为人民服务</span>
+</div><div><span>C： 脱离群众</span>
+</div><div><span>D： 保持党同人民群众的血肉联系</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            保持党同人民群众的血肉联系</span></p><p></div><hr/><h3><span>380. </span>&#8220;<span>三个代表</span>&#8221;<span>重要思想在邓小平理论的基础上（）</span></h3><div><span>A： 进一步回答了什么是社会主义、怎样建设社会主义的问题</span>
+</div><div><span>B： 进一步回答了实现什么样的发展、怎样发展</span>
+</div><div><span>C： 创造性地回答了建设什么样的党、怎样建设党的问题</span>
+</div><div><span>D： 创造性回答了实现什么样的发展、怎样发展</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>进一步回答了什么是社会主义、怎样建设社会主义的问题</span><br>
+<span>创造性地回答了建设什么样的党、怎样建设党的问题</span><br></p><p></div><hr/><h3><span>381. 在下列著作中，毛泽东把教条主义者比喻为</span>&#8220;<span>墙上芦苇，头重脚轻根底浅；山间竹笋嘴尖皮厚腹中空</span>&#8221;<span>的是</span></h3><div><span>A： 《改造我们的学习》</span>
+</div><div><span>B： 《整顿党的作风》</span>
+</div><div><span>C： 《反对本本主义》</span>
+</div><div><span>D： 《为人民服务》</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            《改造我们的学习》</span></p><p></div><hr/><h3><span>382. 党的实事求是思想路线重新确立是在</span></h3><div><span>A： 中共七大</span>
+</div><div><span>B： 中共十一届三中全会</span>
+</div><div><span>C： 中共十二大</span>
+</div><div><span>D： 中共十九大</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            中共十一届三中全会</span></p><p></div><hr/><h3><span>383. 党对军队的绝对领导是包括</span><strong><span>__</span></strong>&#12289;<strong><span>__</span></strong>&#12289;<strong><span>__</span></strong><span>_在内的全面领导</span></h3><div><span>A： 政治领导</span>
+</div><div><span>B： 文化领导</span>
+</div><div><span>C： 思想领导</span>
+</div><div><span>D： 组织领导</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>政治领导</span><br>
+<span>思想领导</span><br>
+<span>组织领导</span><br></p><p></div><hr/><h3><span>384. 根据</span>&#12298;<span>中共中央关于全面推进依法治国若干重大问题的决定</span>&#12299;<span>的规定，依法治国为什么要坚持党的领导?()</span></h3><div><span>A： 党的领导是中国特色社会主义最本质的特征</span>
+</div><div><span>B： 是社会主义法治最根本的保证。</span>
+</div><div><span>C： 把党的领导贯彻到依法治国全过程和各方面，是我国社会主义法治建设的一条基本经验</span>
+</div><div><span>D： 我国宪法确立了中国共产党的领导地位</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>党的领导是中国特色社会主义最本质的特征</span><br>
+<span>是社会主义法治最根本的保证。</span><br>
+<span>把党的领导贯彻到依法治国全过程和各方面，是我国社会主义法治建设的一条基本经验</span><br>
+<span>我国宪法确立了中国共产党的领导地位</span><br></p><p></div><hr/><h3><span>385. 1957年2月，毛泽东在扩大的最高国务会议上发表</span>&#12298;<span>关于正确处理人民内部矛盾的问题</span>&#12299;<span>的讲话，系统论述了社会主义社会矛盾的理论</span>&#12290;<span>毛泽东指出</span></h3><div><span>A： 矛盾是普遍存在的，社会主义社会同样充满着矛盾</span>
+</div><div><span>B： 社会主义社会的基本矛盾仍然是生产关系和生产力之间、上层建筑和经济基础之间的矛盾，它同旧社会的基本矛盾性质是一样的</span>
+</div><div><span>C： 社会主义社会的矛盾反映在政治上可以划分为敌我矛盾和人民内部矛盾这两类性质完全不同的矛盾，正确处理人民内部矛盾是国家政治生活的主题</span>
+</div><div><span>D： 社会主义社会的矛盾可以通过社会主义制度本身的自我调整和自我完善得到解决</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>矛盾是普遍存在的，社会主义社会同样充满着矛盾</span><br>
+<span>社会主义社会的矛盾反映在政治上可以划分为敌我矛盾和人民内部矛盾这两类性质完全不同的矛盾，正确处理人民内部矛盾是国家政治生活的主题</span><br>
+<span>社会主义社会的矛盾可以通过社会主义制度本身的自我调整和自我完善得到解决</span><br></p><p></div><hr/><h3><span>386. （    ）标志着党探索中国社会主义建设道路的良好开端？</span></h3><div><span>A： 《论十大关系》</span>
+</div><div><span>B： 《关于正确处理人民内部矛盾的问题》</span>
+</div><div><span>C： 《关于国家资本主义经济》</span>
+</div><div><span>D： 《新民主主义论》</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            《论十大关系》</span></p><p></div><hr/><h3><span>387. 下列哪项不是毛泽东提出的</span>&#8220;<span>两参一改三结合</span>&#8221;<span>的内容？</span></h3><div><span>A： 职工代表大会制度</span>
+</div><div><span>B： 干部参加劳动，工人参加管理</span>
+</div><div><span>C： 改革不合理的规章制度</span>
+</div><div><span>D： 工人群众、领导干部和技术人员三结合</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            职工代表大会制度</span></p><p></div><hr/><h3><span>388. 实现</span>&#8220;<span>两个一百年</span>&#8221;<span>奋斗目标,走向中华民族伟大复兴中国梦的</span>&#8220;<span>路线图</span>&#8221;<span>是（    ）</span>&#12290;</h3><div><span>A： “四个全面”战略</span>
+</div><div><span>B： “五位一体”布局</span>
+</div><div><span>C： 一带一路</span>
+</div><div><span>D： 中国梦</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            “四个全面”战略</span></p><p></div><hr/><h3><span>389. </span><p><span>（ ）建设现代化经济体系要着力构建___的经济体制。</span></p></h3><div><span>A： 市场经济有效、微观主体有活力、宏观调控有度</span>
+</div><div><span>B： 市场经济有效、经济主体有活力、宏观调控有度</span>
+</div><div><span>C： 市场经济有效、微观主体有活力、宏观政策有度</span>
+</div><div><span>D： 市场机制有效、微观主体有活力、宏观调控有度</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            市场机制有效、微观主体有活力、宏观调控有度</span></p><p></div><hr/><h3><span>390. </span><p><span>（）深化供给侧结构性改革的策略包括：___</span></p></h3><div><span>A： 推进增长动能转换,以加快发展先进制造业为重点全面提升实体经济</span>
+</div><div><span>B： 深化要素市场化配置改革，实现由以价取胜向以质取胜的转变</span>
+</div><div><span>C： 加大人力资本培育力度，更加注重调动和保护人的积极性</span>
+</div><div><span>D： 持续推进“三去一降一补”，优化市场供求结构</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>推进增长动能转换,以加快发展先进制造业为重点全面提升实体经济</span><br>
+<span>深化要素市场化配置改革，实现由以价取胜向以质取胜的转变</span><br>
+<span>加大人力资本培育力度，更加注重调动和保护人的积极性</span><br>
+<span>持续推进“三去一降一补”，优化市场供求结构</span><br></p><p></div><hr/><h3><span>391. </span><p><span>（）是我们立党立国的根本之道思想，是中国共产党人的</span>&ldquo;<span>真经</span>&rdquo;<span>。</span></p></h3><div><span>A： 马克思</span>
+</div><div><span>B： 马克思主义</span>
+</div><div><span>C： 马克思列宁主义</span>
+</div><div><span>D： 马克思列宁主义、毛泽东思想、邓小平理论</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            马克思主义</span></p><p></div><hr/><h3><span>392. </span><p><span>科学发展观的基本要求是（ ）</span></p></h3><div><span>A： 发展</span>
+</div><div><span>B： 全面协调可持续</span>
+</div><div><span>C： 以人为本</span>
+</div><div><span>D： 统筹兼顾</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            全面协调可持续</span></p><p></div><hr/><h3><span>393. </span><p><span>（）贯彻新发展理念、建设现代化经济体系必须坚持供给侧结构性改革。坚持质量第一、效益优先，以供给侧结构性改革为主线，推动</span><strong><em><span>、</span></em></strong><span>、___，提高全要素生产率。</span></p></h3><div><span>A： 经济发展</span>
+</div><div><span>B： 效率变革</span>
+</div><div><span>C： 效益变革</span>
+</div><div><span>D： 动力变革</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            </span><br>
+<span>经济发展</span><br>
+<span>效率变革</span><br>
+<span>动力变革</span><br></p><p></div><hr/><h3><span>394. </span><p><span>社会主义的根本任务是（）</span></p></h3><div><span>A： 发展经济</span>
+</div><div><span>B： 发展科学技术</span>
+</div><div><span>C： 解放和发展生产力</span>
+</div><div><span>D： 解放生产力</span>
+</div><h5><span>参考答案</span></h5><div style="color:#FF0000" ><span>            解放和发展生产力</span></p><p></div><hr/></p></div>
+</body>
+</html>
